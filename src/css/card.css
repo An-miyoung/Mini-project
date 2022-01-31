@@ -1,0 +1,64 @@
+.card__title h4 {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 36px;
+  margin-top: 10px;
+  margin-left: -10px;
+}
+.card {
+  width: 97%;
+  margin-top: 15px;
+  margin-left: -10px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 30px;
+  position: relative;
+}
+.card > .card__container {
+  display: grid;
+  grid-template-columns: 3fr 9fr 28px;
+  grid-template-rows: 60px 43px;
+  grid-template-areas:
+    "rank title more"
+    "rank by more";
+}
+.card > .card__container > .rank {
+  grid-area: rank;
+  place-self: center;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 52px;
+  color: #80b8fa;
+}
+.card > .card__container > .title {
+  grid-area: title;
+  padding-top: 10px;
+  padding-right: 28px;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700px;
+  overflow: hidden;
+}
+.card > .card__container > .by {
+  grid-area: by;
+  padding-top: 15px;
+  font-size: 13px;
+  line-height: 19px;
+  color: #a5a5a5;
+}
+.card > .card__container > .by > .logo__point__comment {
+  float: right;
+  margin-right: 22px;
+}
+.card > .card__container > .by > .logo__point__comment span {
+  font-size: 13px;
+  line-height: 19px;
+  vertical-align: text-top;
+  color: #a5a5a5;
+}
+.card > .card__container > .more {
+  grid-area: more;
+  place-self: center;
+  cursor: pointer;
+}
