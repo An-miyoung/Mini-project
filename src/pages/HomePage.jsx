@@ -1,24 +1,31 @@
 import { useEffect } from "react";
 import PostList from "../components/PostList";
+import { getStoriesPage } from "../hooks/useGetPost";
+import { TOP_PAGE_HEIGHT } from "../constants";
 
 export default function HomePage() {
   const type = "top";
   const clientYs = [];
+  const pageMove = [];
+
   useEffect(() => {
     const topPage = document.getElementById("topPage");
     const topPageTouchStart = function (event) {
-      console.log("touchstart", event);
       clientYs.splice(0);
       clientYs.push(event.touches[0].clientY);
     };
     const topPageTouchMove = function (event) {
-      console.log("touchmove", event);
       clientYs.push(event.touches[0].clientY);
     };
     const topPageTouchEnd = function (event) {
-      console.log("topPageTouchEnd", event);
       if (clientYs[0] > clientYs[clientYs.length - 1]) {
-        console.log("업 슬라이딩");
+        pageMove.push(clientYs[0] - clientYs[clientYs.length - 1]);
+        const lastMove = pageMove.reduce((r, l) => r + l, 0);
+        if (lastMove >= TOP_PAGE_HEIGHT) {
+          getStoriesPage(type);
+          pageMove.splice(0);
+        }
+        console.log("업 슬라이딩: ", lastMove);
       }
     };
     topPage.addEventListener("touchstart", topPageTouchStart);
@@ -31,6 +38,7 @@ export default function HomePage() {
       topPage.removeEventListener("touchend", topPageTouchEnd);
     };
   }, []);
+
   return (
     <div id="topPage">
       <PostList type={type} />

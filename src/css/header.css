@@ -3,7 +3,6 @@
   height: 147px;
   display: flex;
   position: relative;
-  border: 1px solid red;
 }
 .header .title {
   width: 100%;

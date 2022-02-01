@@ -9,6 +9,7 @@ export default function useDataFetcher(type) {
   const [stories, setStories] = useState([]);
   getPosts[0] = stories;
   getPosts[1] = setStories;
+  getPosts[2] = type;
 
   useEffect(() => {
     getStoriesPage(type);

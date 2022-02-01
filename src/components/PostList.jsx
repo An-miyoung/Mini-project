@@ -15,21 +15,19 @@ export default function PostList({ type }) {
   useEffect(() => {
     const divPage = document.getElementById("div-page");
     const divPageScroll = function (event) {
-      console.log(event);
       if (
         event.target.scrollHeight <=
         event.target.clientHeight + event.target.scrollTop
       ) {
-        console.log("스크롤 마지막");
         getStoriesPage(type);
       }
     };
     divPage.addEventListener("scroll", divPageScroll);
     return function () {
-      console.log("종료");
       divPage.removeEventListener("scroll", divPageScroll);
     };
   }, [type]);
+
   return (
     <div className="container">
       <Header name={type} />
