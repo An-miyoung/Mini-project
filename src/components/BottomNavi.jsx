@@ -39,6 +39,15 @@ export default function BottomNavi() {
           <h3>JOB</h3>
         </NavLink>
       </div>
+      <button
+        style={{ position: "fixed", top: "746px", left: "360px" }}
+        onClick={() => {
+          const divPage = document.getElementById("div-page");
+          divPage.scrollTop = 0;
+        }}
+      >
+        Top
+      </button>
     </div>
   );
 }
