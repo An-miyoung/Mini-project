@@ -27,7 +27,7 @@ export default function PostList({ type }) {
       </div>
       <BottomNavi />
       <Routes>
-        <Route path="comment/:id" element={<Comments />} />
+        <Route path="comments/:id" element={<Comments />} />
       </Routes>
     </div>
   );

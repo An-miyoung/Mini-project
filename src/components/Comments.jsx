@@ -1,13 +1,16 @@
+import { useEffect, useState } from "react";
 import "../css/comments.css";
 import Up from "../assets/images/up_small.png";
 import { useParams } from "react-router-dom";
 import { getPosts } from "../hooks/useGetPost";
+import { getKids } from "../utils/apis";
 
 // 개별 아이템을 클릭했을때 코멘트가 출력되는 콤포넌트입니다.
 // 이것을 어디서 어떻게 불러야 자기가 가진 내용을 갖고 다음 페이지로 연결된지
 // 모르겠습니다.
 
 export default function Comments() {
+  const [kidList, setKidList] = useState([]);
   const { id } = useParams();
   // console.log(typeof id, id);
 
@@ -23,6 +26,11 @@ export default function Comments() {
   });
   // console.log("story", story);
   const { title, url, by, kids } = story.data;
+  useEffect(() => {
+    getKids(kids).then((posts) => {
+      setKidList(posts);
+    });
+  }, [kids]);
   return (
     <div className="container">
       <div className="header__comments">
@@ -40,7 +48,11 @@ export default function Comments() {
           Comment
           {`${kids && kids.length > 0 ? kids.length : 0}`}
         </div>
-        <div className="content__inner"></div>
+        {kidList.map(({ data }, index) => (
+          <div className="content__inner" key={index}>
+            {data.text}
+          </div>
+        ))}
       </div>
     </div>
   );

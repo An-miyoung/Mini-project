@@ -27,3 +27,14 @@ export const getStories = async (type) => {
     // console.log(error);
   }
 };
+
+export const getKids = async (kids) => {
+  try {
+    // console.log(storyIds);
+    const stories = await Promise.all(kids.map(getStory));
+    console.log(stories);
+    return stories;
+  } catch (error) {
+    // console.log(error);
+  }
+};
