@@ -2,6 +2,8 @@ import useGetPost from "../hooks/useGetPost";
 import Post from "./Post";
 import Header from "../components/Header";
 import BottomNavi from "../components/BottomNavi";
+import { Route, Routes } from "react-router-dom";
+import Comments from "./Comments";
 
 export default function PostList({ type }) {
   console.log(type);
@@ -24,6 +26,9 @@ export default function PostList({ type }) {
         )}
       </div>
       <BottomNavi />
+      <Routes>
+        <Route path="comment/:id" element={<Comments />} />
+      </Routes>
     </div>
   );
 }

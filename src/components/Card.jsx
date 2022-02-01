@@ -6,18 +6,15 @@ import Comment from "../assets/images/comment.png";
 
 export default function Card({ post, height }) {
   const { id, by, kids, score, time, title, url } = post;
-  const showDetail = () => {
-    console.log(post);
-    // return <Comments post={post} />;
-  };
+
   return (
     <div className="card" style={{ height: `${height}px` }}>
       <div className="card__container" style={{ height: `${height}px` }}>
         <div className="card__item rank">1</div>
         <div className="card__item title">{title}</div>
         <div className="more logo__right-arrow">
-          <Link to={"/comments/" + id}>
-            <img src={More} alt="detail" onClick={showDetail} />
+          <Link to={"comments/" + id}>
+            <img src={More} alt="detail" />
           </Link>
         </div>
         <div className="card__item by">
