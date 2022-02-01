@@ -7,7 +7,7 @@ export default function Header({ name }) {
   return (
     <div className="header">
       <div className="title">
-        <h1>{name}</h1>
+        <h1>{name.toUpperCase()}</h1>
       </div>
       <div className="footer">
         <div className="logo">

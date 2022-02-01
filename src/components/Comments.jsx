@@ -17,35 +17,36 @@ export default function Comments() {
 
   const [post, setPost] = useState({});
 
-  useEffect(() => {
-    getPosts(idx)
-      .then((posts) => setPost(posts))
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   getPosts(idx)
+  //     .then((posts) => setPost(posts))
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
-  console.log(post);
-  const { title, url, by, kids } = post.data;
-  return (
-    <div className="container">
-      <div className="header__comments">
-        <div className="header__back">**</div>
-        <div className="header__title">{title}</div>
-        <div className="header__url">{url}</div>
-        <div className="header__by">by {by}</div>
-        <div className="header__more"></div>
-      </div>
-      <div className="content__comments">
-        <div className="content__up">
-          <img src={Up} alt="upWard" />
-        </div>
-        <div className="content__title">
-          Comment
-          {`${kids && kids.length > 0 ? kids.length : 0}`}
-        </div>
-        <div className="content__inner"></div>
-      </div>
-    </div>
-  );
+  //   console.log(post);
+  //   const { title, url, by, kids } = post.data;
+  //   return (
+  //     <div className="container">
+  //       <div className="header__comments">
+  //         <div className="header__back">**</div>
+  //         <div className="header__title">{title}</div>
+  //         <div className="header__url">{url}</div>
+  //         <div className="header__by">by {by}</div>
+  //         <div className="header__more"></div>
+  //       </div>
+  //       <div className="content__comments">
+  //         <div className="content__up">
+  //           <img src={Up} alt="upWard" />
+  //         </div>
+  //         <div className="content__title">
+  //           Comment
+  //           {`${kids && kids.length > 0 ? kids.length : 0}`}
+  //         </div>
+  //         <div className="content__inner"></div>
+  //       </div>
+  //     </div>
+  //   );
+  return <div>메롱</div>;
 }

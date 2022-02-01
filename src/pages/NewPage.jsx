@@ -4,7 +4,7 @@ export default function NewPage() {
   const type = "new";
   return (
     <div>
-      <PostList url={type} />
+      <PostList type={type} />
     </div>
   );
 }

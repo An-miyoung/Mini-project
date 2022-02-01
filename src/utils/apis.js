@@ -1,4 +1,5 @@
 import axios from "axios";
+import { STORY_INCREMENT } from "../constants";
 
 const BASE_URL = "https://hacker-news.firebaseio.com/v0";
 
@@ -18,7 +19,9 @@ export const getStories = async (type) => {
       `${BASE_URL}/${type}stories.json`
     );
     console.log(storyIds);
-    const stories = await Promise.all(storyIds.slice(0, 30).map(getStory));
+    const stories = await Promise.all(
+      storyIds.slice(0, STORY_INCREMENT).map(getStory)
+    );
     return stories;
   } catch (error) {
     console.log(error);

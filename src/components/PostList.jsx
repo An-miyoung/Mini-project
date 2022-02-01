@@ -7,6 +7,7 @@ export default function PostList({ type }) {
   console.log(type);
 
   const posts = useGetPost(type ? type : "top");
+
   console.log(posts);
   return (
     <div className="container">
@@ -17,9 +18,10 @@ export default function PostList({ type }) {
             <h4>Top List</h4>
           </div>
         )}
-        {posts.map(({ data: post }) => (
-          <Post key={post.id} post={post} type={type} />
-        ))}
+        {posts.map(
+          ({ data: post }) =>
+            post && <Post key={post.id} post={post} type={type} />
+        )}
       </div>
       <BottomNavi />
     </div>

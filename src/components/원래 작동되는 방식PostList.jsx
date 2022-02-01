@@ -3,7 +3,7 @@ import Story from "./Post";
 import { useParams } from "react-router-dom";
 
 export default function ShowStories({ type }) {
-  // const { type } = useParams();
+  const { type } = useParams();
   console.log(type);
 
   const stories = useDataFetcher(type ? type : "topstories.json");
