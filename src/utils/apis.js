@@ -13,15 +13,15 @@ const getStory = async (id) => {
   }
 };
 
-export const getStories = async (type) => {
+export const getStories = async (type, page) => {
   try {
     const { data: storyIds } = await axios.get(
       `${BASE_URL}/${type}stories.json`
     );
     // console.log(storyIds);
-    const stories = await Promise.all(
-      storyIds.slice(0, STORY_INCREMENT).map(getStory)
-    );
+    const start = (page - 1) * STORY_INCREMENT;
+    const end = start + STORY_INCREMENT;
+    const stories = await Promise.all(storyIds.slice(start, end).map(getStory));
     return stories;
   } catch (error) {
     // console.log(error);

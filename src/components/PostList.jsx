@@ -1,4 +1,5 @@
-import useGetPost from "../hooks/useGetPost";
+import { useEffect } from "react";
+import useGetPost, { getStoriesPage } from "../hooks/useGetPost";
 import Post from "./Post";
 import Header from "../components/Header";
 import BottomNavi from "../components/BottomNavi";
@@ -11,10 +12,28 @@ export default function PostList({ type }) {
   const posts = useGetPost(type ? type : "top");
 
   // console.log(posts);
+  useEffect(() => {
+    const divPage = document.getElementById("div-page");
+    const divPageScroll = function (event) {
+      console.log(event);
+      if (
+        event.target.scrollHeight <=
+        event.target.clientHeight + event.target.scrollTop
+      ) {
+        console.log("스크롤 마지막");
+        getStoriesPage(type);
+      }
+    };
+    divPage.addEventListener("scroll", divPageScroll);
+    return function () {
+      console.log("종료");
+      divPage.removeEventListener("scroll", divPageScroll);
+    };
+  }, [type]);
   return (
     <div className="container">
       <Header name={type} />
-      <div className="page">
+      <div className="page" id="div-page">
         {type === "top" && (
           <div className="card__title">
             <h4>Top List</h4>
