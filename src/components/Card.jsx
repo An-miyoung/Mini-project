@@ -1,11 +1,12 @@
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../css/card.css";
 import More from "../assets/images/more.png";
 import Point from "../assets/images/point.png";
 import Comment from "../assets/images/comment.png";
 
 export default function Card({ post, height }) {
-  const { id, by, kids, score, time, title, url } = post;
+  // const { id, by, kids, score, time, title, url } = post;
+  const { id, by, kids, score, title } = post;
 
   return (
     <div className="card" style={{ height: `${height}px` }}>

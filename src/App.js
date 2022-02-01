@@ -1,13 +1,12 @@
 import "./App.css";
 import "./css/style.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import NotFound from "./pages/NotFound.jsx";
 import HomePage from "./pages/HomePage";
 import NewPage from "./pages/NewPage";
 import AskPage from "./pages/AskPage";
 import ShowPage from "./pages/ShowPage";
 import JobPage from "./pages/JobPage";
-import CommentPage from "./pages/CommentPage";
 
 const App = () => (
   <>
@@ -22,7 +21,7 @@ const App = () => (
       <Route path="/ask/*" element={<AskPage />} />
       <Route path="/new/*" element={<NewPage />} />
       <Route path="/top/*" element={<HomePage />} />
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<Navigate replace to="/top" />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </>

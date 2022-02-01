@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 
 export default function ShowStories({ type }) {
   const { type } = useParams();
-  console.log(type);
+  // console.log(type);
 
   const stories = useDataFetcher(type ? type : "topstories.json");
-  console.log(stories);
+  // console.log(stories);
   return (
     <div>
       {stories.map(({ data: story }) => (

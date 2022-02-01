@@ -6,11 +6,11 @@ import { Route, Routes } from "react-router-dom";
 import Comments from "./Comments";
 
 export default function PostList({ type }) {
-  console.log(type);
+  // console.log(type);
 
   const posts = useGetPost(type ? type : "top");
 
-  console.log(posts);
+  // console.log(posts);
   return (
     <div className="container">
       <Header name={type} />

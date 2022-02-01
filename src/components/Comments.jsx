@@ -1,7 +1,6 @@
 import "../css/comments.css";
 import Up from "../assets/images/up_small.png";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { getPosts } from "../hooks/useGetPost";
 
 // 개별 아이템을 클릭했을때 코멘트가 출력되는 콤포넌트입니다.
@@ -10,19 +9,19 @@ import { getPosts } from "../hooks/useGetPost";
 
 export default function Comments() {
   const { id } = useParams();
-  console.log(typeof id, id);
+  // console.log(typeof id, id);
 
   const idx = Number(id);
-  console.log(typeof idx, idx);
+  // console.log(typeof idx, idx);
 
   const [stories] = getPosts;
 
   const story = stories.find((post) => {
-    console.log("post.data.id : ", post.data.id);
-    console.log("id : ", idx);
+    // console.log("post.data.id : ", post.data.id);
+    // console.log("id : ", idx);
     return post.data.id === idx;
   });
-  console.log("story", story);
+  // console.log("story", story);
   const { title, url, by, kids } = story.data;
   return (
     <div className="container">

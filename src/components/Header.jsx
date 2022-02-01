@@ -3,7 +3,7 @@ import Logo from "../assets/images/logo.png";
 import ThreeDot from "../assets/images/3Dot.png";
 
 export default function Header({ name }) {
-  console.log(name);
+  // console.log(name);
   return (
     <div className="header">
       <div className="title">
