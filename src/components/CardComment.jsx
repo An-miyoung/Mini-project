@@ -6,15 +6,16 @@ import Comment from "../assets/images/comment.png";
 
 export default function CardComment({ post, height }) {
   // const { id, by, kids, score, time, title, url } = post;
-  const { id, by, time, text } = post;
-
-  return (
-    <>
-      <div className="content__by">{by}</div>
-      <div
-        className="content__text"
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></div>
-    </>
-  );
+  if (post !== null) {
+    const { id, by, time, text } = post;
+    return (
+      <>
+        <div className="content__by">{by}</div>
+        <div
+          className="content__text"
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></div>
+      </>
+    );
+  } else return null;
 }

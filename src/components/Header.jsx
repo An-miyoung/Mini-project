@@ -1,21 +1,26 @@
 import "../css/header.css";
+import { NavLink } from "react-router-dom";
+import JobImg from "../assets/images/job-img.png";
 import Logo from "../assets/images/logo.png";
 import ThreeDot from "../assets/images/3Dot.png";
 
 export default function Header({ name }) {
   // console.log(name);
   return (
-    <div className="header">
+    <div className={`header inner-box ${name}`}>
+      <img src={JobImg} alt="rocket" />
       <div className="title">
-        <h1>{name.toUpperCase()}</h1>
+        <h1 className={`inner-box ${name}`}>{name.toUpperCase()}</h1>
       </div>
-      <div className="footer">
+      <NavLink to="/about" className={`footer inner-box ${name}`}>
         <div className="logo">
           <img src={Logo} alt="detail" />
         </div>
-        <div className="dots"></div>
-        <img src={ThreeDot} alt="detail" />
-      </div>
+        <div className="space"></div>
+        <div className="dots">
+          <img src={ThreeDot} alt="detail" />
+        </div>
+      </NavLink>
     </div>
   );
 }

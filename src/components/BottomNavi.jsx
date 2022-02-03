@@ -11,31 +11,31 @@ export default function BottomNavi() {
   return (
     <div className="navi">
       <div className="navi__top items">
-        <NavLink to="/top/">
+        <NavLink to="/top">
           <img src={Top} alt="TOP" />
           <h3>TOP</h3>
         </NavLink>
       </div>
       <div className="navi__new items">
-        <NavLink to="/new/">
+        <NavLink to="/new">
           <img src={New} alt="NEW" />
           <h3>NEW</h3>
         </NavLink>
       </div>
       <div className="navi__ask items">
-        <NavLink to="/ask/">
+        <NavLink to="/ask">
           <img src={Ask} alt="ASK" />
           <h3>ASK</h3>
         </NavLink>
       </div>
       <div className="navi__show items">
-        <NavLink to="/show/">
+        <NavLink to="/show">
           <img src={Show} alt="SHOW" />
           <h3>SHOW</h3>
         </NavLink>
       </div>
       <div className="navi__job items">
-        <NavLink to="/job/">
+        <NavLink to="/job">
           <img src={Jobs} alt="JOB" />
           <h3>JOB</h3>
         </NavLink>

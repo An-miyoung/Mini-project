@@ -88,6 +88,7 @@ a {
   background: #ffffff;
   box-shadow: 0px -2px 30px rgba(0, 0, 0, 0.13);
   border-radius: 30px;
+  overflow: hidden;
 }
 .container .content__up {
   position: relative;
@@ -100,7 +101,6 @@ a {
 }
 .container .content__title {
   position: relative;
-  width: 188px;
   height: 36px;
   left: 25px;
   top: 32px;

@@ -1,0 +1,41 @@
+.about__inner {
+  width: 100%;
+  padding-top: 72px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.about__inner .about__back {
+  margin-bottom: 15px;
+  height: 20px;
+  left: 26px;
+}
+.about__inner .about__title {
+  width: 139px;
+  height: 58px;
+  left: 0;
+  top: 108px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 58px;
+  color: #000000;
+}
+.about__inner .about__img {
+  width: 364px;
+  height: 248px;
+  left: 0;
+  top: 194px;
+  background: #5255be;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+}
+.about__inner .about__greeting {
+  width: 364px;
+  height: 286px;
+  left: 0;
+  top: 467px;
+  font-family: Inter;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
