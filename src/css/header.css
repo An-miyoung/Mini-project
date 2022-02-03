@@ -1,47 +1,45 @@
 .header {
   width: 100%;
-  height: 547px;
-  display: flex;
   position: relative;
 }
-.header > img {
+.header > .inner-box.job > img {
   position: absolute;
   width: 361px;
   height: 361px;
   top: 85px;
   left: 95px;
 }
-.header.inner-box.top > img {
+.header > .inner-box.top > img {
   display: none;
 }
-.header.inner-box.new > img {
+.header > .inner-box.new > img {
   display: none;
 }
-.header.inner-box.ask > img {
+.header > .inner-box.ask > img {
   display: none;
 }
-.header.inner-box.show > img {
+.header > .inner-box.show > img {
   display: none;
 }
-.header.inner-box.new {
-  background-color: #5255be;
+.header > .inner-box {
+  height: 547px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
   border-radius: 0px 0px 50px 0px;
 }
-.header.inner-box.ask {
+.header > .inner-box.new {
+  background-color: #5255be;
+}
+.header > .inner-box.ask {
   background-color: #b3b5f9;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
-  border-radius: 0px 0px 50px 0px;
 }
-.header.inner-box.show {
+.header > .inner-box.show {
   background-color: #83c8f7;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
-  border-radius: 0px 0px 50px 0px;
 }
-.header.inner-box.job {
+.header > .inner-box.job {
   background-color: #5255be;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
-  border-radius: 0px 0px 50px 0px;
+}
+.header .title-container {
+  display: flex;
 }
 .header .title {
   width: 100%;
@@ -54,19 +52,38 @@
   font-size: 40px;
   line-height: 58px;
   box-sizing: border-box;
-}
-.header .title h1.inner-box.new {
   color: #fff;
 }
-.header .title h1.inner-box.ask {
-  color: #fff;
+.header .title h1.inner-box.top {
+  color: #000;
 }
-.header .title h1.inner-box.show {
-  color: #fff;
+
+/* search bar */
+.header .search-bar {
+  position: absolute;
+  width: 364px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 30px;
 }
-.header .title h1.inner-box.job {
-  color: #fff;
+.header .search-bar.top {
+  display: none;
 }
+.header .search-bar.new {
+  display: none;
+}
+.header .search-bar.show {
+  display: none;
+}
+.header .search-bar.ask {
+  top: 162px;
+  left: 25px;
+}
+.header .search-bar.job {
+  top: 242px;
+  left: 25px;
+}
+
 .header .footer {
   display: flex;
   position: absolute;

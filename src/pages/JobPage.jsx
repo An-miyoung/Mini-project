@@ -34,7 +34,6 @@ export default function JobPage() {
       <Header name={type} />
 
       <div className="page" id="div-page">
-        <div className="seach-bar">SEARCH-BAR</div>
         {/* height 를 직접주고 Card 를 바로 부르도록 수정할것 */}
         {posts.map(
           ({ data: post }) =>
