@@ -18,3 +18,10 @@
   bottom: 0;
   overflow: auto;
 }
+
+.container .seach-bar {
+  width: 364px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 30px;
+}
