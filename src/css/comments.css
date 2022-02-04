@@ -22,53 +22,69 @@ a {
 .container .header__title {
   position: absolute;
   width: 344px;
-  height: 174px;
   left: 22px;
   top: 100px;
+}
+.container .header__title > .title-text {
+  height: 240px;
   font-weight: bold;
   font-size: 40px;
   line-height: 58px;
   color: #ffffff;
+  overflow: hidden;
 }
-.container .header__url {
-  position: absolute;
+.container .header__title > .header__url {
+  position: relative;
   width: 200px;
   height: 44px;
-  left: 19px;
-  top: 357px;
   background: #80b8fa;
   border-radius: 100px;
 }
-.container .header__url > span.url__string {
+.container .header__title > .header__url > .url__string {
   position: absolute;
-  width: 121px;
+  width: 170px;
   height: 24px;
-  left: 17px;
+  left: 20px;
   top: 10px;
   font-size: 15px;
   line-height: 22px;
   color: #ffffff;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.container .header__url > .more {
+.container .header__title > .header__url > .more {
   position: absolute;
-  width: 121px;
+  width: 12px;
   height: 24px;
-  left: 94%;
-  top: 11px;
+  left: 190px;
+  top: 10px;
   color: #ffffff;
 }
-.container .header__by {
+.container .header__by__logo {
   position: absolute;
-  width: 101px;
+  width: 100%;
   height: 22px;
   left: 18px;
   bottom: 64px;
+  padding-right: 22px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.container .header__by__logo > .header__by {
   font-size: 15px;
   line-height: 22px;
   color: #dbdcef;
-  white-space: nowrap;
+}
+.container .header__by__logo > .logo.logo__point__comment {
+  margin-right: 22px;
+}
+.container .header__by__logo > .logo__point__comment span {
+  font-size: 13px;
+  line-height: 19px;
+  /* vertical-align: text-top; */
+  color: #dbdcef;
 }
 .container .header__more {
   position: absolute;
@@ -80,6 +96,7 @@ a {
   line-height: 19px;
   color: #dbdcef;
 }
+
 .container .content__comments {
   width: 100%;
   height: 416px;

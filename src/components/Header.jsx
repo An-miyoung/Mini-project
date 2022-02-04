@@ -12,7 +12,9 @@ export default function Header({ name }) {
         <img src={JobImg} alt="rocket" />
         <div className="title-container">
           <div className="title">
-            <h1 className={`inner-box ${name}`}>{name.toUpperCase()}</h1>
+            <h1 className={`inner-box ${name}`}>
+              {name === "job" ? "JOBS" : name.toUpperCase()}
+            </h1>
           </div>
           <NavLink to="/about" className={`footer inner-box ${name}`}>
             <div className="logo">

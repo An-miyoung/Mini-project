@@ -14,7 +14,7 @@
   border-radius: 30px;
   position: relative;
 }
-.card > .card__container {
+.card > .card__container.top {
   display: grid;
   grid-template-columns: 3fr 9fr 28px;
   grid-template-rows: 60px 43px;
@@ -22,7 +22,7 @@
     "rank title more"
     "rank by more";
 }
-.card > .card__container > .rank {
+.card > .card__container.top > .rank {
   grid-area: rank;
   place-self: center;
   font-weight: bold;
@@ -30,7 +30,7 @@
   line-height: 52px;
   color: #80b8fa;
 }
-.card > .card__container > .title {
+.card > .card__container.top > .title {
   grid-area: title;
   padding-top: 10px;
   padding-right: 28px;
@@ -40,9 +40,52 @@
   font-weight: 700px;
   overflow: hidden;
 }
+.card > .card__container.top > .by {
+  grid-area: by;
+  padding-top: 15px;
+  font-size: 13px;
+  line-height: 19px;
+  color: #a5a5a5;
+}
+.card > .card__container.top > .by > .logo__point__comment {
+  float: right;
+  margin-right: 22px;
+}
+.card > .card__container.top > .by > .logo__point__comment span {
+  font-size: 13px;
+  line-height: 19px;
+  vertical-align: text-top;
+  color: #a5a5a5;
+}
+.card > .card__container.top > .more {
+  grid-area: more;
+  place-self: center;
+  cursor: pointer;
+}
+/* new, show */
+.card > .card__container {
+  display: grid;
+  grid-template-columns: 10fr 28px;
+  grid-template-rows: 60px 43px;
+  grid-template-areas:
+    "title more"
+    "by more";
+}
+.card > .card__container > .title {
+  grid-area: title;
+  padding-top: 10px;
+  padding-right: 28px;
+  padding-left: 25px;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700px;
+  overflow: hidden;
+}
 .card > .card__container > .by {
   grid-area: by;
   padding-top: 15px;
+  padding-left: 25px;
   font-size: 13px;
   line-height: 19px;
   color: #a5a5a5;
