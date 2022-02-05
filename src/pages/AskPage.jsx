@@ -14,7 +14,7 @@ export default function AskPage() {
 
   // console.log(posts);
   useEffect(() => {
-    const divPage = document.getElementById("div-page");
+    const divPage = document.getElementById("div-page-2");
     const divPageScroll = function (event) {
       if (
         event.target.scrollHeight <=
@@ -32,7 +32,7 @@ export default function AskPage() {
   return (
     <div className="container">
       <Header name={type} />
-      <div className="page" id="div-page">
+      <div className="page ask" id="div-page-2">
         {/* height 를 직접주고 Card 를 바로 부르도록 수정할것 */}
         {posts.map(
           ({ data: post }) =>

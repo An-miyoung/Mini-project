@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "../css/card.css";
 import More from "../assets/images/more.png";
-import Point from "../assets/images/point.png";
-import Comment from "../assets/images/comment.png";
+import Point2 from "../assets/images/point2.png";
+import Comment2 from "../assets/images/comment2.png";
 
 export default function Card({ post, type, height }) {
   // const { id, by, kids, score, time, title, url } = post;
@@ -24,7 +24,7 @@ export default function Card({ post, type, height }) {
             <div className="logo logo__point__comment">
               <span>
                 <img
-                  src={Point}
+                  src={Point2}
                   alt="point"
                   style={{ width: "16px", height: "16px" }}
                 />
@@ -34,7 +34,7 @@ export default function Card({ post, type, height }) {
               </span>
               <span>
                 <img
-                  src={Comment}
+                  src={Comment2}
                   alt="comment"
                   style={{ marginLeft: "3px" }}
                 />
@@ -58,7 +58,7 @@ export default function Card({ post, type, height }) {
           <div className="logo logo__point__comment">
             <span>
               <img
-                src={Point}
+                src={Point2}
                 alt="point"
                 style={{ width: "16px", height: "16px" }}
               />
@@ -67,7 +67,7 @@ export default function Card({ post, type, height }) {
               {time}
             </span>
             <span>
-              <img src={Comment} alt="comment" style={{ marginLeft: "3px" }} />
+              <img src={Comment2} alt="comment" style={{ marginLeft: "3px" }} />
             </span>
             <span style={{ marginLeft: "3px" }}>
               {`${kids && kids.length > 0 ? kids.length : 0}`}

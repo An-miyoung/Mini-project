@@ -13,7 +13,7 @@ export default function PostList({ type }) {
 
   // console.log(posts);
   useEffect(() => {
-    const divPage = document.getElementById("div-page");
+    const divPage = document.getElementById("div-page-2");
     const divPageScroll = function (event) {
       if (
         event.target.scrollHeight <=
@@ -31,7 +31,7 @@ export default function PostList({ type }) {
   return (
     <div className="container">
       <Header name={type} />
-      <div className={`page ${type}`} id="div-page">
+      <div className={`page ${type}`} id="div-page-2">
         {type === "top" && (
           <div className="card__title">
             <h4>Top List</h4>

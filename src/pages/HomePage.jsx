@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import "../css/top.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { TOP_PAGE_HEIGHT } from "../constants";
 import useGetPost, { getStoriesPage } from "../hooks/useGetPost";
 import Post from "../components/Post";
@@ -9,18 +11,33 @@ import Comments from "../components/Comments";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import ThreeDot from "../assets/images/3Dot.png";
+import MoreL from "../assets/images/more_large.png";
+import MoreS from "../assets/images/more_silver.png";
+import Point from "../assets/images/point.png";
+import Point2 from "../assets/images/point2.png";
+import Comment from "../assets/images/comment.png";
+import Comment2 from "../assets/images/comment2.png";
+import Slider from "react-slick";
 
 export default function HomePage() {
   const type = "top";
   const clientYs = [];
   const pageMove = [];
 
+  let settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   const posts = useGetPost(type ? type : "top");
 
   useEffect(() => {
     const topPage = document.getElementById("topPage");
-    const page = document.querySelector(".page.top");
-    console.log(page);
+    const title = document.getElementById("div-slider");
+
     const topPageTouchStart = function (event) {
       clientYs.splice(0);
       clientYs.push(event.touches[0].clientY);
@@ -32,11 +49,15 @@ export default function HomePage() {
       if (clientYs[0] > clientYs[clientYs.length - 1]) {
         pageMove.push(clientYs[0] - clientYs[clientYs.length - 1]);
         const lastMove = pageMove.reduce((r, l) => r + l, 0);
-        if (lastMove >= TOP_PAGE_HEIGHT) {
-          getStoriesPage(type);
+        if (lastMove > 0) {
           topPage.style.top = "147px";
           topPage.style.height = "659px";
           topPage.style.transition = "all 500ms ease";
+          title.style.display = "none";
+
+          if (lastMove >= TOP_PAGE_HEIGHT || lastMove >= 270) {
+            getStoriesPage(type);
+          }
           pageMove.splice(0);
         }
         console.log("업 슬라이딩: ", lastMove);
@@ -47,9 +68,10 @@ export default function HomePage() {
           topPage.style.top = "545px";
           topPage.style.height = "270px";
           topPage.style.transition = "all 500ms ease";
+          title.style.display = "block";
           pageMove.splice(0);
         }
-        console.log("업 슬라이딩: ", lastMove);
+        console.log("다운 슬라이딩: ", lastMove);
       }
     };
     topPage.addEventListener("touchstart", topPageTouchStart);
@@ -97,13 +119,188 @@ export default function HomePage() {
           </NavLink>
         </div>
       </div>
-      <div className="slider__container">
+      <div className="slider__container" id="div-slider">
         <div className="slider__title">
           <h4>Todays' TOP5</h4>
         </div>
+        <Slider {...settings}>
+          <div className="slider__item">
+            <div className="slider__box" id="first">
+              <div className="slider__text">
+                <div className="text__title" id="first">
+                  The Windows 11 taskbar is an annoying step backword
+                </div>
+                <div className="text__by" id="first">
+                  by username
+                </div>
+              </div>
+              <div className="slider__logo" id="first">
+                <div className="logo logo__point__comment">
+                  <span id="first">
+                    <img
+                      src={Point}
+                      alt="point"
+                      style={{ width: "16px", height: "16px" }}
+                    />
+                  </span>
+                  <span
+                    style={{ marginLeft: "3px", marginRight: "12px" }}
+                    id="first"
+                  >
+                    score
+                  </span>
+                  <span id="first">
+                    <img
+                      src={Comment}
+                      alt="comment"
+                      style={{ marginLeft: "3px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px" }} id="first">
+                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
+                  </span>
+                </div>
+                <div className="more" id="first">
+                  <img src={MoreL} alt="detail" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="slider__item">
+            <div className="slider__box">
+              <div className="slider__text">
+                <div className="text__title">FreePostgerss DataBase</div>
+                <div className="text__by">by username</div>
+              </div>
+              <div className="slider__logo">
+                <div className="logo logo__point__comment">
+                  <span>
+                    <img
+                      src={Point2}
+                      alt="point"
+                      style={{ width: "16px", height: "16px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
+                    score
+                  </span>
+                  <span>
+                    <img
+                      src={Comment2}
+                      alt="comment"
+                      style={{ marginLeft: "3px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px" }}>
+                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
+                  </span>
+                </div>
+                <div className="more">
+                  <img src={MoreS} alt="detail" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="slider__item">
+            <div className="slider__box">
+              <div className="slider__text">
+                <div className="text__title">FreePostgerss DataBase</div>
+                <div className="text__by">by username</div>
+              </div>
+              <div className="slider__logo">
+                <div className="logo logo__point__comment">
+                  <span>
+                    <img
+                      src={Point2}
+                      alt="point"
+                      style={{ width: "16px", height: "16px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
+                    score
+                  </span>
+                  <span>
+                    <img
+                      src={Comment2}
+                      alt="comment"
+                      style={{ marginLeft: "3px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px" }}>
+                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="slider__item">
+            <div className="slider__box">
+              <div className="slider__text">
+                <div className="text__title">FreePostgerss DataBase</div>
+                <div className="text__by">by username</div>
+              </div>
+              <div className="slider__logo">
+                <div className="logo logo__point__comment">
+                  <span>
+                    <img
+                      src={Point2}
+                      alt="point"
+                      style={{ width: "16px", height: "16px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
+                    score
+                  </span>
+                  <span>
+                    <img
+                      src={Comment2}
+                      alt="comment"
+                      style={{ marginLeft: "3px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px" }}>
+                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="slider__item">
+            <div className="slider__box">
+              <div className="slider__text">
+                <div className="text__title">FreePostgerss DataBase</div>
+                <div className="text__by">by username</div>
+              </div>
+              <div className="slider__logo">
+                <div className="logo logo__point__comment">
+                  <span>
+                    <img
+                      src={Point2}
+                      alt="point"
+                      style={{ width: "16px", height: "16px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
+                    score
+                  </span>
+                  <span>
+                    <img
+                      src={Comment2}
+                      alt="comment"
+                      style={{ marginLeft: "3px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px" }}>
+                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Slider>
       </div>
       <div id="topPage" className="page top">
-        <div className="card__title" style={{ marginLeft: "23px" }}>
+        <div className="card__title">
           <h4>Top List</h4>
         </div>
         <div className="page" id="div-page">
