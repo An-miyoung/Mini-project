@@ -18,7 +18,7 @@ const App = () => (
       그 방식으로 하자, 두번째 세부 화면으로 갈때  routing 를 하지 못해 
       무식한 반복의 방식으로 변경했습니다. */}
     <Routes>
-      <Route path="/profile/:by" element={<ProfilePage />} />
+      <Route path="/profile/:by/*" element={<ProfilePage />} />
       <Route path="/about/*" element={<AboutPage />} />
       <Route path="/job/*" element={<JobPage />} />
       <Route path="/show/*" element={<ShowPage />} />

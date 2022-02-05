@@ -7,7 +7,7 @@ import Comment from "../assets/images/comment.png";
 
 export default function CardComment({ post, height }) {
   // const { id, by, kids, score, time, title, url } = post;
-  const type = getPosts[2];
+
   if (post !== null) {
     const { id, by, time, text } = post;
     return (

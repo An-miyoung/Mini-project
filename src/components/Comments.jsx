@@ -11,7 +11,6 @@ import { getPosts } from "../hooks/useGetPost";
 import { getKids } from "../utils/apis";
 import { shortenUrl } from "../utils/shortenUrl";
 import CardComment from "./CardComment";
-import Profile from "./Profile";
 
 // 개별 아이템을 클릭했을때 코멘트가 출력되는 콤포넌트입니다.
 // 이것을 어디서 어떻게 불러야 자기가 가진 내용을 갖고 다음 페이지로 연결된지
@@ -23,9 +22,12 @@ export default function Comments() {
   const [kidList, setKidList] = useState([]);
   const { id } = useParams();
   const idx = Number(id);
+  console.log("back-id: ", idx);
 
   const [stories] = getPosts;
   const type = getPosts[2];
+  // 이 화면에서 profile 를 갔다가 back 할 경우 주소를 찾으려고 만든 변수
+  getPosts[3] = idx;
 
   const story = stories.find((post) => {
     return post.data.id === idx;
@@ -39,7 +41,7 @@ export default function Comments() {
       return splitUrl;
     }
   };
-  // console.log("story", story);
+  console.log("story", story);
   const { title, url, by, kids, score } = story.data;
   useEffect(() => {
     getKids(kids).then((posts) => {
@@ -50,13 +52,13 @@ export default function Comments() {
   console.log("kidList: ", kidList);
   return (
     <>
-      <div className="header__comments">
+      <div className={`header__comments ${type}`}>
         <div className="header__back">
-          <NavLink to={type}>
+          <NavLink to={`/${type}`}>
             <img src={Back} alt="backWard" />
           </NavLink>
         </div>
-        <div className="header__title">
+        <div className={`header__title ${type}`}>
           <div className="title-text">{title}</div>
           <div className="header__url">
             <div className="url__string">{url && shortenUrl(url)}</div>
@@ -102,6 +104,7 @@ export default function Comments() {
             ))}
         </div>
       </div>
+
       {/* <Route path="comments/:id" element={<Comments />} /> */}
 
       {/* <Routes>

@@ -7,7 +7,7 @@ import Comment from "../assets/images/comment.png";
 export default function Card({ post, type, height }) {
   // const { id, by, kids, score, time, title, url } = post;
   const { id, by, kids, score, title, time } = post;
-
+  console.log("card진입: ", post);
   return (
     <div className="card" style={{ height: `${height}px` }}>
       {type === "top" && (
@@ -32,7 +32,6 @@ export default function Card({ post, type, height }) {
               <span style={{ marginLeft: "3px", marginRight: "12px" }}>
                 {score}
               </span>
-
               <span>
                 <img
                   src={Comment}

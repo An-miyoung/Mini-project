@@ -9,6 +9,13 @@ a {
   top: 0px;
   background-color: #5255be;
 }
+.container .header__comments.show {
+  background-color: #83c8f7;
+}
+.container .header__comments.ask {
+  background-color: #b3b5f9;
+}
+
 .container .header__back {
   position: absolute;
   width: 101px;
@@ -39,6 +46,12 @@ a {
   height: 44px;
   background: #80b8fa;
   border-radius: 100px;
+}
+.container .header__title.show > .header__url {
+  background-color: #5255be;
+}
+.container .header__title.ask > .header__url {
+  display: none;
 }
 .container .header__title > .header__url > .url__string {
   position: absolute;

@@ -11,6 +11,7 @@ export default function useDataFetcher(type) {
   getPosts[0] = stories;
   getPosts[1] = setStories;
   getPosts[2] = type;
+  getPosts[3] = [];
 
   useEffect(() => {
     getStoriesPage(type);

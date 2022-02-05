@@ -1,0 +1,161 @@
+.container .header__profile {
+  position: absolute;
+  width: 100%;
+  height: 528px;
+  left: 0px;
+  top: 0px;
+}
+.container .avatar {
+  position: absolute;
+  top: 180px;
+  left: 132px;
+}
+.container .avatar .avatar__img {
+  width: 155px;
+  height: 155px;
+  background-image: url("/src/assets/images/1.png");
+  background-size: 140px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #b3b5f9;
+}
+.container .avatar .avatar__name {
+  position: relative;
+  width: 100%;
+  height: 29px;
+  top: -10px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 0px;
+  text-align: center;
+}
+.container .sns {
+  position: absolute;
+  width: 370px;
+  height: 108px;
+  left: 22px;
+  top: 336px;
+  margin-top: 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 30px;
+  padding-left: 63px;
+  padding-top: 18px;
+  box-sizing: border-box;
+}
+.container .sns .sns__text {
+  font-size: 15px;
+  line-height: 22px;
+}
+.fa-instagram,
+.fa-twitter,
+.fa-envelope {
+  margin-right: 10px;
+  color: #b1b1b1;
+}
+.container .card.sns {
+  left: 22px;
+  top: 479px;
+}
+.container .career {
+  position: absolute;
+  width: 370px;
+  height: 87px;
+  top: 479px;
+  left: 23px;
+  padding-top: 18px;
+  padding-left: 49px;
+  padding-right: 63px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 30px;
+}
+.container .profile-bar {
+  position: absolute;
+  left: 208px;
+  top: 500px;
+}
+.container .career-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.container .career-inner .date,
+.k-point {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 36px;
+}
+.container .career-float {
+  position: relative;
+  width: 250px;
+  height: 5px;
+  right: 0;
+}
+.container .career-float .joined {
+  position: absolute;
+  top: 0;
+  left: 13px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  color: #a5a5a5;
+}
+.container .career-float .karma {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  color: #a5a5a5;
+}
+.container .activeLog {
+  position: absolute;
+  width: 370px;
+  height: 260px;
+  top: 586px;
+  left: 23px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
+  border-radius: 30px;
+  display: flex;
+  padding-left: 23px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  box-sizing: border-box;
+}
+.container .activeLog-container {
+  display: grid;
+  grid-template-columns: 50px 230px 20px;
+  grid-template-rows: 50px 31px 50px 31px 50px;
+  grid-template-areas:
+    "logo-sub title-sub more-sub"
+    "none none none"
+    "logo-com title-com more-com"
+    "none none none"
+    "logo-fav title-fav more-fav";
+}
+.container .activeLog-container > .logo-sub {
+  background-image: url("/src/assets/images/bg-sub.png");
+}
+.container .activeLog-container > .logo-com {
+  background-image: url("/src/assets/images/bg-com.png");
+}
+.container .activeLog-container > .logo-fav {
+  background-image: url("/src/assets/images/bg-fav.png");
+}
+.container .activeLog-container > .more-sub,
+.more-com,
+.more-fav {
+  place-self: center;
+}
+.container .activeLog-container > .title-sub,
+.title-com,
+.title-fav {
+  padding-left: 28px;
+  align-self: center;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 45px;
+}

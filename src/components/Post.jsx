@@ -19,7 +19,6 @@ export default function Post({ post, type }) {
       break;
     case "job":
       height = 197;
-
       break;
     default:
       height = 102;

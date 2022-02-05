@@ -21,7 +21,11 @@
 .header > .inner-box.show > img {
   display: none;
 }
-.header > .inner-box.top {
+.header > .inner-box.submissions > img {
+  display: none;
+}
+.header > .inner-box.top,
+.inner-box.submission {
   height: 450px;
   box-shadow: none;
   border-radius: none;
@@ -60,7 +64,8 @@
   box-sizing: border-box;
   color: #fff;
 }
-.header .title h1.inner-box.top {
+.header .title h1.inner-box.top,
+h1.inner-box.submissions {
   color: #000;
 }
 
@@ -72,15 +77,18 @@
   background: #ffffff;
   border-radius: 30px;
 }
-.header .search-bar.top {
+.header .search-bar.top,
+.search-bar.new,
+.search-bar.show,
+.search-bar.submissions {
   display: none;
 }
-.header .search-bar.new {
+/* .header .search-bar.new {
   display: none;
 }
 .header .search-bar.show {
   display: none;
-}
+} */
 .header .search-bar.ask {
   top: 162px;
   left: 25px;
@@ -96,10 +104,13 @@
   left: 80%;
   top: 87px;
 }
-.header .footer.inner-box.new {
+.header .footer.inner-box.new,
+.footer.inner-box.ask,
+.footer.inner-box.show,
+.footer.inner-box.submissions {
   display: none;
 }
-.header .footer.inner-box.ask {
+/* .header .footer.inner-box.ask {
   display: none;
 }
 .header .footer.inner-box.show {
@@ -107,7 +118,7 @@
 }
 .header .footer.inner-box.job {
   display: none;
-}
+} */
 .header .footer .logo {
   width: 23px;
   height: 29px;
