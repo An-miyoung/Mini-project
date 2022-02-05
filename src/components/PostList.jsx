@@ -31,7 +31,7 @@ export default function PostList({ type }) {
   return (
     <div className="container">
       <Header name={type} />
-      <div className="page" id="div-page">
+      <div className={`page ${type}`} id="div-page">
         {type === "top" && (
           <div className="card__title">
             <h4>Top List</h4>

@@ -41,7 +41,7 @@ export default function BottomNavi() {
         </NavLink>
       </div>
       <div
-        style={{ position: "fixed", top: "762px", left: "360px" }}
+        className="navi__up"
         onClick={() => {
           const divPage = document.getElementById("div-page");
           divPage.scrollTop = 0;

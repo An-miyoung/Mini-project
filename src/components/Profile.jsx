@@ -142,9 +142,12 @@ export default function Profile() {
             <div className="logo-sub"></div>
             <div className="title-sub">Submissions</div>
             <div className="more-sub">
-              <Link to={"submissions"}>
+              {/* <Link to={"submissions"}>
                 <img src={More} alt="detail" onClick={submission} />
-              </Link>
+              </Link> */}
+              <a href="https://news.ycombinator.com/submitted?id=rufname">
+                <img src={More} alt="detail" />
+              </a>
             </div>
             <div className="none"></div>
             <div className="none"></div>
@@ -164,9 +167,9 @@ export default function Profile() {
             </div>
           </div>
         </div>
-        <Routes>
+        {/* <Routes>
           <Route path="submissions" element={<SubmissionList />} />
-        </Routes>
+        </Routes> */}
       </div>
     );
 }

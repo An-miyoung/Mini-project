@@ -9,9 +9,6 @@
   top: 85px;
   left: 95px;
 }
-.header > .inner-box.top > img {
-  display: none;
-}
 .header > .inner-box.new > img {
   display: none;
 }
@@ -24,8 +21,7 @@
 .header > .inner-box.submissions > img {
   display: none;
 }
-.header > .inner-box.top,
-.inner-box.submission {
+.header > .inner-box.submission {
   height: 450px;
   box-shadow: none;
   border-radius: none;
@@ -64,8 +60,7 @@
   box-sizing: border-box;
   color: #fff;
 }
-.header .title h1.inner-box.top,
-h1.inner-box.submissions {
+.header h1.inner-box.submissions {
   color: #000;
 }
 
@@ -77,18 +72,12 @@ h1.inner-box.submissions {
   background: #ffffff;
   border-radius: 30px;
 }
-.header .search-bar.top,
-.search-bar.new,
+.header .search-bar.new,
 .search-bar.show,
 .search-bar.submissions {
   display: none;
 }
-/* .header .search-bar.new {
-  display: none;
-}
-.header .search-bar.show {
-  display: none;
-} */
+
 .header .search-bar.ask {
   top: 162px;
   left: 25px;
@@ -109,24 +98,4 @@ h1.inner-box.submissions {
 .footer.inner-box.show,
 .footer.inner-box.submissions {
   display: none;
-}
-/* .header .footer.inner-box.ask {
-  display: none;
-}
-.header .footer.inner-box.show {
-  display: none;
-}
-.header .footer.inner-box.job {
-  display: none;
-} */
-.header .footer .logo {
-  width: 23px;
-  height: 29px;
-}
-.header .footer .dots {
-  width: 7px;
-  height: 27px;
-}
-.space {
-  margin-right: 17px;
 }

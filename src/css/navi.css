@@ -10,6 +10,7 @@
   justify-content: space-around;
   align-items: baseline;
   box-sizing: border-box;
+  background-color: #fff;
 }
 .navi h3 {
   display: block;
@@ -18,4 +19,9 @@
   line-height: 12px;
   position: absolute;
   top: 35px;
+}
+.navi__up {
+  position: fixed;
+  top: 762px;
+  left: 360px;
 }
