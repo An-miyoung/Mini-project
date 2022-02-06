@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import "../css/profile.css";
 import { getPosts } from "../hooks/useGetPost";
 import useGetUser from "../hooks/useGetUser";
+import { mapTime } from "../utils/mapTime";
 import Back from "../assets/images/back.png";
 import More from "../assets/images/more.png";
 import Bar from "../assets/images/profile-bar.png";
@@ -126,7 +127,7 @@ export default function Profile() {
 
         <div className="career">
           <div className="career-inner">
-            <div className="date">{profile.created}</div>
+            <div className="date">{mapTime(profile.created)}</div>
             <div className="k-point">{profile.karma}</div>
           </div>
           <div className="career-float">

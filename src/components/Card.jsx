@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import "../css/card.css";
 import More from "../assets/images/more.png";
+import Time from "../assets/images/time.png";
 import Point2 from "../assets/images/point2.png";
 import Comment2 from "../assets/images/comment2.png";
+import { mapTime } from "../utils/mapTime";
 import { rankArg } from "./PostList";
 
 export default function Card({ post, type, height }) {
@@ -31,6 +33,7 @@ export default function Card({ post, type, height }) {
                 />
               </span>
               <span style={{ marginLeft: "3px", marginRight: "12px" }}>
+                {` `}
                 {score}
               </span>
               <span>
@@ -47,7 +50,10 @@ export default function Card({ post, type, height }) {
           </div>
         </div>
       )}
-      <div className="card__container" style={{ height: `${height}px` }}>
+      <div
+        className={`card__container ${type}`}
+        style={{ height: `${height}px` }}
+      >
         <div className="card__item title">{title}</div>
         <div className="more logo__right-arrow">
           <Link to={"comments/" + id}>
@@ -59,13 +65,14 @@ export default function Card({ post, type, height }) {
           <div className="logo logo__point__comment">
             <span>
               <img
-                src={Point2}
-                alt="point"
+                src={Time}
+                alt="time"
                 style={{ width: "16px", height: "16px" }}
               />
             </span>
             <span style={{ marginLeft: "3px", marginRight: "12px" }}>
-              {time}
+              {` `}
+              {mapTime(time)} ago
             </span>
             <span>
               <img src={Comment2} alt="comment" style={{ marginLeft: "3px" }} />

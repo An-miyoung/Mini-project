@@ -6,14 +6,8 @@ import BottomNavi from "../components/BottomNavi";
 import { Route, Routes } from "react-router-dom";
 import Comments from "./Comments";
 
-export const rankArg = [];
-
 export default function PostList({ type }) {
   // console.log(type);
-  const [rank, setRank] = useState([]);
-  setRank(0);
-  rankArg[0] = rank;
-  rankArg[1] = setRank;
 
   const posts = useGetPost(type ? type : "top");
 
