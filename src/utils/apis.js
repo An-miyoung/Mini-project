@@ -45,3 +45,15 @@ export const getKids = async (kids) => {
     // console.log(error);
   }
 };
+
+export const getSubmissions = async (user) => {
+  console.log(user);
+  try {
+    const stories = await Promise.all(
+      user.submitted.slice(0, 30).map(getStory)
+    );
+    return stories;
+  } catch (error) {
+    // console.log(error);
+  }
+};

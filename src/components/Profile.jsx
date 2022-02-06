@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import "../css/profile.css";
 import { getPosts } from "../hooks/useGetPost";
 import useGetUser from "../hooks/useGetUser";
@@ -12,17 +12,17 @@ export const getSubmission = [];
 export default function Profile() {
   const navigate = useNavigate();
   const { by } = useParams();
-  // console.log("by: ", by);
+  console.log("by: ", by);
 
   // const type = getPosts[2];
   const commentID = getPosts[3];
-  // console.log(commentID);
+  console.log(commentID);
 
   const user = useGetUser(by);
-  // console.log(user);
+  console.log(user);
 
   const { data: profile } = user;
-  // console.log(profile);
+  console.log(profile);
 
   if (profile === undefined)
     return (
@@ -113,12 +113,12 @@ export default function Profile() {
             <div className="logo-sub"></div>
             <div className="title-sub">Submissions</div>
             <div className="more-sub">
-              {/* <Link to={"submissions"}>
-                <img src={More} alt="detail" onClick={submission} />
-              </Link> */}
-              <a href="https://news.ycombinator.com/submitted?id=rufname">
+              <Link to={`/profile/${by}/submissions`}>
                 <img src={More} alt="detail" />
-              </a>
+              </Link>
+              {/* <a href="https://news.ycombinator.com/submitted?id=rufname">
+                <img src={More} alt="detail" />
+              </a> */}
             </div>
             <div className="none"></div>
             <div className="none"></div>
