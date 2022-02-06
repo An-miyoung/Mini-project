@@ -11,6 +11,8 @@ import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
 import SubmissionList from "./components/SubmissionList";
 
+import CardComment from "./components/CardComment";
+
 const App = () => (
   <>
     {/* 원래 의도한 코드는 <Route path="/:type" element={<PostList />} />
@@ -20,7 +22,11 @@ const App = () => (
       무식한 반복의 방식으로 변경했습니다. */}
     <Routes>
       <Route path="/profile/:by/" element={<ProfilePage />} />
-      <Route path="/profile/:by/submissions" element={<SubmissionList />} />
+      <Route path="/profile/:by/submissions/*" element={<SubmissionList />} />
+      <Route
+        path="/profile/:by/submissions/comments/:id/"
+        element={<CardComment />}
+      />
       <Route path="/about/*" element={<AboutPage />} />
       <Route path="/job/*" element={<JobPage />} />
       <Route path="/show/*" element={<ShowPage />} />

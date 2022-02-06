@@ -2,7 +2,6 @@ import "../css/header.css";
 import JobImg from "../assets/images/job-img.png";
 
 export default function Header({ name }) {
-  // console.log(name);
   return (
     <div className="header">
       <div className={`inner-box ${name}`}>

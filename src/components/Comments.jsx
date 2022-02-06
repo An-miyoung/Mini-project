@@ -9,9 +9,8 @@ import Comment from "../assets/images/comment.png";
 import { useParams } from "react-router-dom";
 import { getPosts } from "../hooks/useGetPost";
 import { getStory, getKids } from "../utils/apis";
+import { shortenUrl } from "../utils/shortenUrl";
 import CardComment from "./CardComment";
-
-// const gotoUrl = ({ url }) => {};
 
 export default function Comments() {
   const [story, setStory] = useState({});
@@ -19,23 +18,8 @@ export default function Comments() {
   const { title, url, by, kids, score } = story;
   const { id } = useParams();
   const idx = Number(id);
-  // console.log("back-id: ", idx);
 
   const type = getPosts[2];
-
-  // const story = stories.find((post) => {
-  //   return post.data.id === idx;
-  // });
-
-  const shortenUrl = (url) => {
-    const splitUrl = url.split("/")[2];
-    if (splitUrl.includes("www")) {
-      return splitUrl.slice(4);
-    } else {
-      return splitUrl;
-    }
-  };
-  // console.log("story", story);
 
   useEffect(() => {
     getStory(idx).then((response) => {
@@ -47,7 +31,6 @@ export default function Comments() {
     });
   }, [idx]);
 
-  // console.log("kidList: ", kidList);
   return (
     <>
       <div className={`header__comments ${type}`}>
@@ -115,12 +98,6 @@ export default function Comments() {
             ))}
         </div>
       </div>
-
-      {/* <Route path="comments/:id" element={<Comments />} /> */}
-
-      {/* <Routes>
-        <Route path={`/${type}/user/:by`} element={<Profile />} />
-      </Routes> */}
     </>
   );
 }

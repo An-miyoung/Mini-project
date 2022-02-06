@@ -5,7 +5,6 @@ import Time from "../assets/images/time.png";
 import Point2 from "../assets/images/point2.png";
 import Comment2 from "../assets/images/comment2.png";
 import { mapTime } from "../utils/mapTime";
-import { rankArg } from "./PostList";
 
 export default function Card({ post, type, height }) {
   // const { id, by, kids, score, time, title, url } = post;
@@ -54,7 +53,9 @@ export default function Card({ post, type, height }) {
         className={`card__container ${type}`}
         style={{ height: `${height}px` }}
       >
-        <div className="card__item title">{title}</div>
+        <div className="card__item title">{`${
+          post.text ? post.text : title
+        }`}</div>
         <div className="more logo__right-arrow">
           <Link to={"comments/" + id}>
             <img src={More} alt="detail" />

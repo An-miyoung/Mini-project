@@ -21,7 +21,7 @@
 .header > .inner-box.submissions > img {
   display: none;
 }
-.header > .inner-box.submission {
+.header > .inner-box.submissions {
   height: 450px;
   box-shadow: none;
   border-radius: none;
@@ -61,6 +61,7 @@
   color: #fff;
 }
 .header h1.inner-box.submissions {
+  margin-top: 108px;
   color: #000;
 }
 
@@ -93,9 +94,3 @@
   left: 80%;
   top: 87px;
 }
-/* .header .footer.inner-box.new,
-.footer.inner-box.ask,
-.footer.inner-box.show,
-.footer.inner-box.submissions {
-  display: none;
-} */

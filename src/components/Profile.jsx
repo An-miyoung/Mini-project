@@ -7,14 +7,12 @@ import Back from "../assets/images/back.png";
 import More from "../assets/images/more.png";
 import Bar from "../assets/images/profile-bar.png";
 
-export const getSubmission = [];
-
 export default function Profile() {
   const navigate = useNavigate();
+  console.log(navigate);
   const { by } = useParams();
   console.log("by: ", by);
 
-  // const type = getPosts[2];
   const commentID = getPosts[3];
   console.log(commentID);
 
@@ -116,9 +114,6 @@ export default function Profile() {
               <Link to={`/profile/${by}/submissions`}>
                 <img src={More} alt="detail" />
               </Link>
-              {/* <a href="https://news.ycombinator.com/submitted?id=rufname">
-                <img src={More} alt="detail" />
-              </a> */}
             </div>
             <div className="none"></div>
             <div className="none"></div>
@@ -138,9 +133,6 @@ export default function Profile() {
             </div>
           </div>
         </div>
-        {/* <Routes>
-          <Route path="submissions" element={<SubmissionList />} />
-        </Routes> */}
       </div>
     );
 }

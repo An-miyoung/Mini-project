@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import "../css/card.css";
-import More from "../assets/images/more.png";
 import Time from "../assets/images/time.png";
-import Point2 from "../assets/images/point2.png";
 import Comment2 from "../assets/images/comment2.png";
 import { mapTime } from "../utils/mapTime";
-import { rankArg } from "./PostList";
 
 export default function CardAsk({ post, type, height }) {
   const { by, kids, text, title, time } = post;
