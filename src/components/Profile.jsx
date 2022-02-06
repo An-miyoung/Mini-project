@@ -1,6 +1,4 @@
-import { useParams, Link, Routes, Route, useNavigate } from "react-router-dom";
-import axios from "axios";
-import { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import "../css/profile.css";
 import { getPosts } from "../hooks/useGetPost";
 import useGetUser from "../hooks/useGetUser";
@@ -8,60 +6,23 @@ import { mapTime } from "../utils/mapTime";
 import Back from "../assets/images/back.png";
 import More from "../assets/images/more.png";
 import Bar from "../assets/images/profile-bar.png";
-import SubmissionList from "../components/SubmissionList";
-import { BASE_URL } from "../constants";
-import { STORY_INCREMENT } from "../constants";
 
 export const getSubmission = [];
 
 export default function Profile() {
   const navigate = useNavigate();
   const { by } = useParams();
-  console.log("by: ", by);
+  // console.log("by: ", by);
 
-  const type = getPosts[2];
+  // const type = getPosts[2];
   const commentID = getPosts[3];
-  console.log(commentID);
+  // console.log(commentID);
 
   const user = useGetUser(by);
-  console.log(user);
+  // console.log(user);
 
   const { data: profile } = user;
-  console.log(profile);
-
-  function submission() {
-    let pageNumber = 0;
-    const postList = profile.submitted;
-    console.log(postList);
-
-    const getStory = async (id) => {
-      try {
-        const story = await axios.get(`${BASE_URL}/item/${id}.json`);
-        return story;
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    const getStories = async () => {
-      try {
-        pageNumber++;
-        const storyIds = profile.submitted;
-        const start = (pageNumber - 1) * STORY_INCREMENT;
-        const end = start + STORY_INCREMENT;
-        const stories = await Promise.all(
-          storyIds.slice(start, end).map(getStory)
-        );
-        console.log("profile의 submission: ", stories);
-        getSubmission[0] = stories;
-        return stories;
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getStories();
-  }
+  // console.log(profile);
 
   if (profile === undefined)
     return (
@@ -97,9 +58,13 @@ export default function Profile() {
       <div className="container">
         <div className="header__profile">
           <div className="header__back">
-            <Link to={`/${type}/comments/${commentID}`}>
-              <img src={Back} alt="backWard" />
-            </Link>
+            <img
+              src={Back}
+              alt="backWard"
+              onClick={() => {
+                navigate(-1);
+              }}
+            />
           </div>
           <div className="header__title" style={{ top: "110px" }}>
             <div

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
 import "../css/job.css";
 import Up from "../assets/images/up_small.png";
-import useGetPost, { getStoriesPage } from "../hooks/useGetPost";
+import useGetPost from "../hooks/useGetPost";
 import Header from "../components/Header";
 import BottomNavi from "../components/BottomNavi";
 import CardJob from "../components/CardJob";

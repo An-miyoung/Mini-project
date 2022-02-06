@@ -8,9 +8,9 @@ export default function useGetUser(id) {
     getUser(id)
       .then((user) => setUser(user))
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   }, [id]);
-  console.log("hooks: ", user);
+  // console.log("hooks: ", user);
   return user;
 }

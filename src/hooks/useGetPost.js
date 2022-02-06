@@ -26,7 +26,7 @@ export const getStoriesPage = (type) => {
       setStories(stories.concat(posts));
     })
     .catch((error) => {
-      console.log(error);
+      // console.log(error);
     });
 };
 

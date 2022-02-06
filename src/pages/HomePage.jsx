@@ -60,7 +60,7 @@ export default function HomePage() {
           }
           pageMove.splice(0);
         }
-        console.log("업 슬라이딩: ", lastMove);
+        // console.log("업 슬라이딩: ", lastMove);
       } else if (clientYs[0] < clientYs[clientYs.length - 1]) {
         pageMove.push(clientYs[clientYs.length - 1] - clientYs[0]);
         const lastMove = pageMove.reduce((r, l) => r + l, 0);
@@ -71,14 +71,14 @@ export default function HomePage() {
           title.style.display = "block";
           pageMove.splice(0);
         }
-        console.log("다운 슬라이딩: ", lastMove);
+        // console.log("다운 슬라이딩: ", lastMove);
       }
     };
     topPage.addEventListener("touchstart", topPageTouchStart);
     topPage.addEventListener("touchmove", topPageTouchMove);
     topPage.addEventListener("touchend", topPageTouchEnd);
     return function () {
-      console.log("터치 종료");
+      // console.log("터치 종료");
       topPage.removeEventListener("touchstart", topPageTouchStart);
       topPage.removeEventListener("touchendmove", topPageTouchMove);
       topPage.removeEventListener("touchend", topPageTouchEnd);

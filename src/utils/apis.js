@@ -3,12 +3,12 @@ import { STORY_INCREMENT } from "../constants";
 
 const BASE_URL = "https://hacker-news.firebaseio.com/v0";
 
-const getStory = async (id) => {
+export const getStory = async (id) => {
   try {
     const story = await axios.get(`${BASE_URL}/item/${id}.json`);
     return story;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
@@ -22,26 +22,26 @@ export const getStories = async (type, page) => {
     const stories = await Promise.all(storyIds.slice(start, end).map(getStory));
     return stories;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
 export const getUser = async (id) => {
   try {
     const user = await axios.get(`${BASE_URL}/user/${id}.json`);
-    console.log(user);
+    // console.log(user);
     return user;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
 export const getKids = async (kids) => {
   try {
     const stories = await Promise.all(kids.map(getStory));
-    console.log(stories);
+    // console.log(stories);
     return stories;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };

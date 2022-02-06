@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../css/comments.css";
 import Up from "../assets/images/up_small.png";
 import More from "../assets/images/more.png";
@@ -8,30 +8,24 @@ import Point from "../assets/images/point.png";
 import Comment from "../assets/images/comment.png";
 import { useParams } from "react-router-dom";
 import { getPosts } from "../hooks/useGetPost";
-import { getKids } from "../utils/apis";
-import { shortenUrl } from "../utils/shortenUrl";
+import { getStory, getKids } from "../utils/apis";
 import CardComment from "./CardComment";
-
-// 개별 아이템을 클릭했을때 코멘트가 출력되는 콤포넌트입니다.
-// 이것을 어디서 어떻게 불러야 자기가 가진 내용을 갖고 다음 페이지로 연결된지
-// 모르겠습니다.
 
 // const gotoUrl = ({ url }) => {};
 
 export default function Comments() {
+  const [story, setStory] = useState({});
   const [kidList, setKidList] = useState([]);
+  const { title, url, by, kids, score } = story;
   const { id } = useParams();
   const idx = Number(id);
-  console.log("back-id: ", idx);
+  // console.log("back-id: ", idx);
 
-  const [stories] = getPosts;
   const type = getPosts[2];
-  // 이 화면에서 profile 를 갔다가 back 할 경우 주소를 찾으려고 만든 변수
-  getPosts[3] = idx;
 
-  const story = stories.find((post) => {
-    return post.data.id === idx;
-  });
+  // const story = stories.find((post) => {
+  //   return post.data.id === idx;
+  // });
 
   const shortenUrl = (url) => {
     const splitUrl = url.split("/")[2];
@@ -41,15 +35,19 @@ export default function Comments() {
       return splitUrl;
     }
   };
-  console.log("story", story);
-  const { title, url, by, kids, score } = story.data;
-  useEffect(() => {
-    getKids(kids).then((posts) => {
-      setKidList(posts);
-    });
-  }, [kids]);
+  // console.log("story", story);
 
-  console.log("kidList: ", kidList);
+  useEffect(() => {
+    getStory(idx).then((response) => {
+      const story = response.data;
+      setStory(story);
+      getKids(story.kids).then((posts) => {
+        setKidList(posts);
+      });
+    });
+  }, [idx]);
+
+  // console.log("kidList: ", kidList);
   return (
     <>
       <div className={`header__comments ${type}`}>
