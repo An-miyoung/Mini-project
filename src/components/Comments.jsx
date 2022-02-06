@@ -57,8 +57,21 @@ export default function Comments() {
           </NavLink>
         </div>
         <div className={`header__title ${type}`}>
-          <div className="title-text">{title}</div>
-          <div className="header__url">
+          <div className="title-text">
+            <span
+              onClick={() => {
+                window.open(url);
+              }}
+            >
+              {title}
+            </span>
+          </div>
+          <div
+            className="header__url"
+            onClick={() => {
+              window.open(url);
+            }}
+          >
             <div className="url__string">{url && shortenUrl(url)}</div>
             <div className="more logo__right-arrow">
               <img src={More} alt="detail" />
