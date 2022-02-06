@@ -1,6 +1,6 @@
-.page.ask {
+#div-page-2.page.ask {
   width: 100%;
-  height: 659px;
+  height: 500px;
   padding-left: 25px;
   box-sizing: border-box;
   position: absolute;
@@ -9,4 +9,84 @@
   top: 336px;
   bottom: 0;
   overflow: auto;
+}
+.page.ask .card > .card__container {
+  padding-top: 18px;
+  padding-left: 27px;
+  padding-bottom: 18px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.page.ask .card > .card__container .card__inner .letterQ {
+  width: 40px;
+  height: 52px;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 52px;
+  color: #5255be;
+}
+.page.ask .card > .card__container .card__inner .title {
+  width: 309px;
+  height: 58px;
+  margin-top: 18px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 29px;
+  color: #000000;
+}
+.page.ask .card > .card__container .logo {
+  position: relative;
+}
+.page.ask .card > .card__container .card__inner .by {
+  width: 45%;
+  height: 19px;
+  margin-top: 40px;
+  font-size: 13px;
+  line-height: 19px;
+  color: #b1b1b1;
+}
+.page.ask .card > .card__container .card__inner .by > .logo__point__comment {
+  position: absolute;
+  width: 150px;
+  height: 19px;
+  top: 0;
+  left: 180px;
+  font-size: 13px;
+  line-height: 19px;
+  color: #b1b1b1;
+}
+.page.ask
+  .card
+  > .card__container
+  .card__inner
+  .by
+  > .logo__point__comment
+  span {
+  font-size: 13px;
+  line-height: 19px;
+  vertical-align: text-top;
+  color: #a5a5a5;
+}
+.page.ask .card > .card__container .card__inner .line {
+  width: 310px;
+  height: 15px;
+  border-bottom: 1px solid #e2e2e2;
+}
+.page.ask .card > .card__container .card__inner .letterA {
+  width: 18px;
+  height: 26px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+}
+.page.ask .card > .card__container .card__inner .text {
+  width: 310px;
+  height: 80px;
+  font-size: 17px;
+  line-height: 25px;
+  color: #000000;
+  overflow: hidden;
 }

@@ -9,7 +9,7 @@ import Up from "../assets/images/up_large.png";
 
 export default function BottomNavi() {
   return (
-    <div className="navi">
+    <div className="navi" id="div-navi">
       <div className="navi__top items">
         <NavLink to="/top">
           <img src={Top} alt="TOP" />

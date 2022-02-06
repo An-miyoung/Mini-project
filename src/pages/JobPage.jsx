@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "../css/job.css";
 import Up from "../assets/images/up_small.png";
 import useGetPost, { getStoriesPage } from "../hooks/useGetPost";
 import Header from "../components/Header";
 import BottomNavi from "../components/BottomNavi";
-import JobList from "../components/JobList";
+import CardJob from "../components/CardJob";
 
 export default function JobPage() {
   const type = "job";
+  const [clicked, setClicked] = useState(false);
   // console.log(type);
 
   const posts = useGetPost(type ? type : "top");
@@ -21,7 +22,6 @@ export default function JobPage() {
         event.target.scrollHeight <=
         event.target.clientHeight + event.target.scrollTop
       ) {
-        getStoriesPage(type);
       }
     };
     divPage.addEventListener("scroll", divPageScroll);
@@ -30,11 +30,23 @@ export default function JobPage() {
     };
   }, [type]);
 
+  function UpSlide() {
+    const page = document.getElementById("div-page");
+    if (clicked) {
+      page.style.top = "442px";
+      page.style.height = "364px";
+    } else {
+      page.style.top = "147px";
+      page.style.height = "659px";
+    }
+    setClicked(!clicked);
+  }
+
   return (
     <div className="container">
       <Header name={type} />
-      <div className={`page ${type}`}>
-        <div className="content__up">
+      <div className={`page ${type}`} id="div-page">
+        <div className="content__up" onClick={UpSlide}>
           <img src={Up} alt="upWard" />
         </div>
         <div className="card__title">
@@ -44,16 +56,12 @@ export default function JobPage() {
           <div className="card">
             {posts.map(
               ({ data: post }) =>
-                post && <JobList key={post.id} post={post} type={type} />
+                post && <CardJob key={post.id} post={post} type={type} />
             )}
           </div>
         </div>
       </div>
       <BottomNavi />
-      {/* 클릭하면 세부사항으로 라우팅 */}
-      {/* <Routes>
-        <Route path="comments/:id" element={<Comments />} />
-      </Routes> */}
     </div>
   );
 }

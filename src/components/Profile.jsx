@@ -1,4 +1,4 @@
-import { useParams, Link, Routes, Route } from "react-router-dom";
+import { useParams, Link, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 import "../css/profile.css";
@@ -15,6 +15,7 @@ import { STORY_INCREMENT } from "../constants";
 export const getSubmission = [];
 
 export default function Profile() {
+  const navigate = useNavigate();
   const { by } = useParams();
   console.log("by: ", by);
 
@@ -67,9 +68,13 @@ export default function Profile() {
       <div className="container">
         <div className="header__profile">
           <div className="header__back">
-            <Link to={`/${type}/comments/${commentID}`}>
-              <img src={Back} alt="backWard" />
-            </Link>
+            <img
+              src={Back}
+              alt="backWard"
+              onClick={() => {
+                navigate(-1);
+              }}
+            />
           </div>
           <div className="header__title" style={{ top: "110px" }}>
             <div

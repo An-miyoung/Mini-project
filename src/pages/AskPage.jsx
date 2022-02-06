@@ -4,7 +4,7 @@ import "../css/ask.css";
 import useGetPost, { getStoriesPage } from "../hooks/useGetPost";
 import Header from "../components/Header";
 import BottomNavi from "../components/BottomNavi";
-import Post from "../components/Post";
+import CardAsk from "../components/CardAsk";
 import Comments from "../components/Comments";
 
 export default function AskPage() {
@@ -34,12 +34,14 @@ export default function AskPage() {
     <div className="container">
       <Header name={type} />
       <div className="page ask" id="div-page-2">
-        {/* height 를 직접주고 Card 를 바로 부르도록 수정할것 */}
         {posts.map(
           ({ data: post }) =>
-            post && <Post key={post.id} post={post} type={type} />
+            post && (
+              <CardAsk key={post.id} post={post} type={type} height="363" />
+            )
         )}
       </div>
+
       <BottomNavi />
       <Routes>
         <Route path="comments/:id" element={<Comments />} />
