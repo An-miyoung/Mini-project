@@ -29,3 +29,7 @@ export const getStoriesPage = (type) => {
       console.log(error);
     });
 };
+
+export const setPage = (page) => {
+  pageNumber = page;
+};

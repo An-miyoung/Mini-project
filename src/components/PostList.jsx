@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import useGetPost, { getStoriesPage } from "../hooks/useGetPost";
+import { useEffect } from "react";
+import useGetPost, { getStoriesPage, setPage } from "../hooks/useGetPost";
 import Post from "./Post";
 import Header from "../components/Header";
 import BottomNavi from "../components/BottomNavi";
@@ -24,6 +24,7 @@ export default function PostList({ type }) {
     };
     divPage.addEventListener("scroll", divPageScroll);
     return function () {
+      setPage(0);
       divPage.removeEventListener("scroll", divPageScroll);
     };
   }, [type]);
