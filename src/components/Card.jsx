@@ -3,11 +3,12 @@ import "../css/card.css";
 import More from "../assets/images/more.png";
 import Point2 from "../assets/images/point2.png";
 import Comment2 from "../assets/images/comment2.png";
+import { rankArg } from "./PostList";
 
 export default function Card({ post, type, height }) {
   // const { id, by, kids, score, time, title, url } = post;
   const { id, by, kids, score, title, time } = post;
-  // console.log("card진입: ", post);
+
   return (
     <div className="card" style={{ height: `${height}px` }}>
       {type === "top" && (

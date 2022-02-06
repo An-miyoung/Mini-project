@@ -3,7 +3,6 @@ import Card from "./Card";
 
 export default function Post({ post, type }) {
   let height = 0;
-  let width = 364;
   switch (type) {
     case "top":
       height = 102;

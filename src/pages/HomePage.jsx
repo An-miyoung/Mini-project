@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "../css/top.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { TOP_PAGE_HEIGHT } from "../constants";
+import { TOP_PAGE_HEIGHT, CURRENT_PAGE_HEIGHT } from "../constants";
 import useGetPost, { getStoriesPage } from "../hooks/useGetPost";
 import Post from "../components/Post";
 import BottomNavi from "../components/BottomNavi";
@@ -55,7 +55,7 @@ export default function HomePage() {
           topPage.style.transition = "all 500ms ease";
           title.style.display = "none";
 
-          if (lastMove >= TOP_PAGE_HEIGHT || lastMove >= 270) {
+          if (lastMove >= TOP_PAGE_HEIGHT || lastMove >= CURRENT_PAGE_HEIGHT) {
             getStoriesPage(type);
           }
           pageMove.splice(0);
@@ -178,6 +178,44 @@ export default function HomePage() {
                     <img
                       src={Point2}
                       alt="point"
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                      }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
+                    score
+                  </span>
+                  <span>
+                    <img
+                      src={Comment2}
+                      alt="comment"
+                      style={{ marginLeft: "3px" }}
+                    />
+                  </span>
+                  <span style={{ marginLeft: "3px" }}>
+                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
+                  </span>
+                </div>
+                <div className="more">
+                  <img src={MoreS} alt="detail" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="slider__item">
+            <div className="slider__box">
+              <div className="slider__text">
+                <div className="text__title">FreePostgerss DataBase</div>
+                <div className="text__by">by username</div>
+              </div>
+              <div className="slider__logo">
+                <div className="logo logo__point__comment">
+                  <span>
+                    <img
+                      src={Point2}
+                      alt="point"
                       style={{ width: "16px", height: "16px" }}
                     />
                   </span>
@@ -230,37 +268,8 @@ export default function HomePage() {
                     {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
                   </span>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="slider__item">
-            <div className="slider__box">
-              <div className="slider__text">
-                <div className="text__title">FreePostgerss DataBase</div>
-                <div className="text__by">by username</div>
-              </div>
-              <div className="slider__logo">
-                <div className="logo logo__point__comment">
-                  <span>
-                    <img
-                      src={Point2}
-                      alt="point"
-                      style={{ width: "16px", height: "16px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
-                    score
-                  </span>
-                  <span>
-                    <img
-                      src={Comment2}
-                      alt="comment"
-                      style={{ marginLeft: "3px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px" }}>
-                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
-                  </span>
+                <div className="more">
+                  <img src={MoreS} alt="detail" />
                 </div>
               </div>
             </div>
@@ -293,6 +302,9 @@ export default function HomePage() {
                   <span style={{ marginLeft: "3px" }}>
                     {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
                   </span>
+                </div>
+                <div className="more">
+                  <img src={MoreS} alt="detail" />
                 </div>
               </div>
             </div>
