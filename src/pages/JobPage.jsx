@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../css/job.css";
 import Up from "../assets/images/up_small.png";
-import useGetPost from "../hooks/useGetPost";
+import useGetPost, { setPage } from "../hooks/useGetPost";
 import Header from "../components/Header";
 import BottomNavi from "../components/BottomNavi";
 import CardJob from "../components/CardJob";
@@ -25,6 +25,7 @@ export default function JobPage() {
     };
     divPage.addEventListener("scroll", divPageScroll);
     return function () {
+      setPage(0);
       divPage.removeEventListener("scroll", divPageScroll);
     };
   }, [type]);

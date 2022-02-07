@@ -8,7 +8,7 @@ export const getStory = async (id) => {
     const story = await axios.get(`${BASE_URL}/item/${id}.json`);
     return story;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 };
 
@@ -22,7 +22,7 @@ export const getStories = async (type, page) => {
     const stories = await Promise.all(storyIds.slice(start, end).map(getStory));
     return stories;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 };
 
@@ -32,7 +32,7 @@ export const getUser = async (id) => {
     // console.log(user);
     return user;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 };
 
@@ -42,7 +42,7 @@ export const getKids = async (kids) => {
     // console.log(stories);
     return stories;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 };
 
@@ -54,6 +54,6 @@ export const getSubmissions = async (user) => {
     );
     return stories;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
   }
 };

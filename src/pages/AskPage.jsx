@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "../css/ask.css";
-import useGetPost, { getStoriesPage } from "../hooks/useGetPost";
+import useGetPost, { getStoriesPage, setPage } from "../hooks/useGetPost";
 import Header from "../components/Header";
 import BottomNavi from "../components/BottomNavi";
 import CardAsk from "../components/CardAsk";
@@ -26,6 +26,7 @@ export default function AskPage() {
     };
     divPage.addEventListener("scroll", divPageScroll);
     return function () {
+      setPage(0);
       divPage.removeEventListener("scroll", divPageScroll);
     };
   }, [type]);

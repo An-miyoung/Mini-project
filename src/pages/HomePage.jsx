@@ -3,7 +3,7 @@ import "../css/top.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { TOP_PAGE_HEIGHT, CURRENT_PAGE_HEIGHT } from "../constants";
-import useGetPost, { getStoriesPage } from "../hooks/useGetPost";
+import useGetPost, { getStoriesPage, setPage } from "../hooks/useGetPost";
 import Post from "../components/Post";
 import BottomNavi from "../components/BottomNavi";
 import { Route, Routes } from "react-router-dom";
@@ -97,6 +97,7 @@ export default function HomePage() {
     };
     divPage.addEventListener("scroll", divPageScroll);
     return function () {
+      setPage(0);
       divPage.removeEventListener("scroll", divPageScroll);
     };
   }, [type]);
