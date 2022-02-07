@@ -53,25 +53,31 @@ export default function Comments() {
         </div>
         <div className={`header__title ${type}`}>
           <div className="title-text">
-            <span
+            {url ? (
+              <span
+                onClick={() => {
+                  window.open(url);
+                }}
+              >
+                {title}
+              </span>
+            ) : (
+              <span>{title}</span>
+            )}
+          </div>
+          {url && (
+            <div
+              className="header__url"
               onClick={() => {
                 window.open(url);
               }}
             >
-              {title}
-            </span>
-          </div>
-          <div
-            className="header__url"
-            onClick={() => {
-              window.open(url);
-            }}
-          >
-            <div className="url__string">{url && shortenUrl(url)}</div>
-            <div className="more logo__right-arrow">
-              <img src={More} alt="detail" />
+              <div className="url__string">{url && shortenUrl(url)}</div>
+              <div className="more logo__right-arrow">
+                <img src={More} alt="detail" />
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <div className="header__by__logo">
           <div className="header__by">by {by}</div>
@@ -104,10 +110,13 @@ export default function Comments() {
           Comment ({`${kids && kids.length > 0 ? kids.length : 0}`})
         </div>
         <div className="content__inner">
-          {kidList !== undefined &&
+          {kidList !== undefined ? (
             kidList.map(({ data: post }, index) => (
               <CardComment key={post.id} post={post} height={200} />
-            ))}
+            ))
+          ) : (
+            <div className="noComment">no comment....</div>
+          )}
         </div>
       </div>
     </>

@@ -149,4 +149,16 @@ a {
   margin-left: 30px;
   box-sizing: border-box;
   overflow: auto;
+  position: relative;
+}
+.container .content__inner .noComment {
+  position: absolute;
+  width: 276px;
+  height: 51px;
+  left: 51px;
+  top: 85px;
+  font-size: 35px;
+  line-height: 51px;
+  text-align: center;
+  color: rgba(164, 164, 164, 0.5);
 }
