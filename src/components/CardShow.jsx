@@ -1,37 +1,27 @@
 import { Link } from "react-router-dom";
 import "../css/show.css";
-import More from "../assets/images/more.png";
 import Time from "../assets/images/time.png";
-import Point2 from "../assets/images/point2.png";
+import More from "../assets/images/more.png";
+import Point from "../assets/images/point2.png";
 import Avatar from "../assets/images/1.png";
 import Comment2 from "../assets/images/comment2.png";
 import { mapTime } from "../utils/mapTime";
 import { cleanText } from "../utils/cleanText";
 
 export default function Card({ post, type, height }) {
-  // const { id, by, kids, score, time, title, url } = post;
   const { id, by, kids, score, title, time } = post;
 
   return (
     <div className="card show" style={{ height: `${height}px` }}>
-      <div
-        className={`card__container ${type}`}
-        style={{ height: `${height}px` }}
-      >
-        <div className="content__header">
-          <div className="profile__img">
-            <img src={Avatar} alt="avatar" />
-          </div>
-          {/* <div class="content__by__created"> */}
-          <Link to={"/profile/" + by}>
-            <div className="content__by">{by}</div>
-          </Link>
-          {/* <div className="created">
-              {mapTime(time)}
-              {` `}ago
-            </div> */}
-          {/* </div> */}
+      <div className="content__header">
+        <div className="profile__img">
+          <img src={Avatar} alt="avatar" />
         </div>
+        <Link to={"/profile/" + by}>
+          <div className="content__by">{by}</div>
+        </Link>
+      </div>
+      <div className={`card__container ${type}`}>
         <div className="card__item title">{`${
           post.text ? cleanText(post.text) : title
         }`}</div>
@@ -41,8 +31,17 @@ export default function Card({ post, type, height }) {
           </Link>
         </div>
         <div className="card__item by">
-          by {by}
           <div className="logo logo__point__comment">
+            <span>
+              <img
+                src={Point}
+                alt="point"
+                style={{ width: "16px", height: "16px" }}
+              />
+            </span>
+            <span style={{ marginLeft: "3px", marginRight: "12px" }}>
+              {score}
+            </span>
             <span>
               <img
                 src={Time}

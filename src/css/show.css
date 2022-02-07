@@ -1,80 +1,52 @@
-.page.show .card > .card__container {
-  padding-top: 13px;
-  padding-left: 16px;
-  padding-bottom: 18px;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.page.show .card > .card__container .card__inner .letterQ {
-  width: 40px;
-  height: 52px;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 52px;
-  color: #5255be;
-}
-.page.show .card > .card__container .card__inner .title {
-  width: 309px;
-  height: 58px;
-  margin-top: 18px;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 29px;
-  color: #000000;
-}
-.page.show .card > .card__container .logo {
+.card.show {
   position: relative;
 }
-.page.show .card > .card__container .card__inner .by {
-  width: 45%;
-  height: 19px;
-  margin-top: 40px;
-  font-size: 13px;
-  line-height: 19px;
-  color: #b1b1b1;
+.content__header {
+  display: flex;
+  padding-top: 13px;
+  margin-left: 16px;
+  box-sizing: border-box;
 }
-.page.show .card > .card__container .card__inner .by > .logo__point__comment {
-  position: absolute;
-  width: 150px;
-  height: 19px;
-  top: 0;
-  left: 180px;
-  font-size: 13px;
-  line-height: 19px;
-  color: #b1b1b1;
+.content__header .profile__img {
+  width: 60px;
+  height: 60px;
 }
-.page.show
-  .card
-  > .card__container
-  .card__inner
-  .by
-  > .logo__point__comment
-  span {
-  font-size: 13px;
-  line-height: 19px;
-  vertical-align: text-top;
-  color: #a5a5a5;
+.content__header .profile__img img {
+  width: 60px;
+  height: 60px;
 }
-.page.show .card > .card__container .card__inner .line {
-  width: 310px;
-  height: 15px;
-  border-bottom: 1px solid #e2e2e2;
-}
-.page.show .card > .card__container .card__inner .letterA {
-  width: 18px;
-  height: 26px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 26px;
-  color: #000000;
-}
-.page.show .card > .card__container .card__inner .text {
-  width: 310px;
-  height: 80px;
+.content__header .content__by {
+  margin-left: 5px;
+  height: 30px;
   font-size: 17px;
   line-height: 25px;
   color: #000000;
-  overflow: hidden;
+}
+
+.content__text__more > .content__text {
+  margin-bottom: 5px;
+  margin-left: 65px;
+  width: 276px;
+  font-size: 17px;
+  line-height: 25px;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.page.show .card > .card__container {
+  position: absolute;
+  left: 16px;
+  top: 60px;
+  box-sizing: border-box;
+}
+.page.show .card.show > .detailClick {
+  width: 350px;
+  height: 100px;
+  background-color: yellow;
+}
+.page.show .card > .card__container > .card__item.title {
+  width: 355px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
 }

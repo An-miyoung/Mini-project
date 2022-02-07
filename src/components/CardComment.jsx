@@ -38,7 +38,7 @@ export default function CardComment({ post, height }) {
           <div className="profile__img">
             <img src={Avatar} alt="avatar" />
           </div>
-          <div class="content__by__created">
+          <div className="content__by__created">
             <Link to={"/profile/" + by}>
               <div className="content__by">{by}</div>
             </Link>

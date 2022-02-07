@@ -25,12 +25,13 @@
 }
 .content__text__more > .content__text {
   margin-bottom: 5px;
-  margin-left: 65px;
+  padding-left: 17px;
   width: 276px;
   font-size: 17px;
   line-height: 25px;
   color: #000000;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .content__text__more > .logo.more {
   padding-left: 300px;

@@ -7,6 +7,7 @@
   border-radius: 30px;
   position: relative;
 }
+
 .card > .card__container.top {
   display: grid;
   grid-template-columns: 3fr 9fr 28px;
@@ -60,6 +61,15 @@
   display: grid;
   grid-template-columns: 10fr 28px;
   grid-template-rows: 60px 43px;
+  grid-template-areas:
+    "title more"
+    "by more";
+}
+.card > .card__container.show {
+  width: 350px;
+  display: grid;
+  grid-template-columns: 322px 28px;
+  grid-template-rows: 65px 38px;
   grid-template-areas:
     "title more"
     "by more";
