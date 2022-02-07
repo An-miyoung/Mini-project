@@ -70,15 +70,42 @@
   position: absolute;
   width: 364px;
   height: 80px;
+  padding-top: 25px;
+  padding-left: 23px;
   background: #ffffff;
   border-radius: 30px;
+  box-sizing: border-box;
 }
 .header .search-bar.new,
 .search-bar.show,
 .search-bar.submissions {
   display: none;
 }
-
+.header .search-bar > .logo.search img {
+  float: left;
+  top: 10px;
+}
+.header .search-bar form {
+  position: relative;
+}
+.header .search-bar input {
+  position: absolute;
+  width: 60%;
+  height: 75px;
+  top: -25px;
+  left: 54px;
+  border: none;
+  background-color: none;
+}
+.header .search-bar input:focus {
+  outline: none;
+}
+.header .search-bar input::placeholder {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: #b6b6b6;
+}
 .header .search-bar.ask {
   top: 162px;
   left: 25px;

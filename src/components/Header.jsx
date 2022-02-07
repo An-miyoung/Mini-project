@@ -1,5 +1,6 @@
 import "../css/header.css";
 import JobImg from "../assets/images/job-img.png";
+import Search from "../assets/images/search.png";
 
 export default function Header({ name }) {
   return (
@@ -14,6 +15,9 @@ export default function Header({ name }) {
           </div>
         </div>
         <div className={`search-bar ${name}`}>
+          <div className="logo search">
+            <img src={Search} alt="search" />
+          </div>
           <form>
             <input type="text" placeholder="Search" />
           </form>
