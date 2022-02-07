@@ -8,7 +8,7 @@ import Point from "../assets/images/point.png";
 import Comment from "../assets/images/comment.png";
 import { useParams } from "react-router-dom";
 import { getPosts } from "../hooks/useGetPost";
-import { getStory, getKids } from "../utils/apis";
+import { getStory, getKids, getSubmissions } from "../utils/apis";
 import { shortenUrl } from "../utils/shortenUrl";
 import CardComment from "./CardComment";
 
@@ -16,10 +16,22 @@ export default function Comments() {
   const [story, setStory] = useState({});
   const [kidList, setKidList] = useState([]);
   const { title, url, by, kids, score } = story;
+
   const { id } = useParams();
   const idx = Number(id);
+  console.log("comments-params: ", idx);
 
   const type = getPosts[2];
+
+  // if (story.kids) {
+  //   const { id, title, url, by, kids, score } = story;
+  //   getData[0] = getKids;
+  //   getData[1] = story.kids;
+  // } else if (story.submitted) {
+  //   const { id, text, submitted } = story;
+  //   getData[0] = getSubmissions;
+  //   getData[1] = story.submitted;
+  // }
 
   useEffect(() => {
     getStory(idx).then((response) => {
@@ -94,7 +106,7 @@ export default function Comments() {
         <div className="content__inner">
           {kidList !== undefined &&
             kidList.map(({ data: post }, index) => (
-              <CardComment key={index} post={post} height={200} />
+              <CardComment key={post.id} post={post} height={200} />
             ))}
         </div>
       </div>

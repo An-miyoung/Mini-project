@@ -43,6 +43,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.07);
   border-radius: 30px;
   position: relative;
+  cursor: pointer;
 }
 .page-slider .card > .card__item .job-title {
   margin: 0 auto;

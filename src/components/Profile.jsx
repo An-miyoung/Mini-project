@@ -13,8 +13,8 @@ export default function Profile() {
   const { by } = useParams();
   console.log("by: ", by);
 
-  const commentID = getPosts[3];
-  console.log(commentID);
+  // const commentID = getPosts[3];
+  // console.log(commentID);
 
   const user = useGetUser(by);
   console.log(user);

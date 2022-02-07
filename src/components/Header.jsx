@@ -13,7 +13,11 @@ export default function Header({ name }) {
             </h1>
           </div>
         </div>
-        <div className={`search-bar ${name}`}>SEARCH-BAR</div>
+        <div className={`search-bar ${name}`}>
+          <form>
+            <input type="text" placeholder="Search" />
+          </form>
+        </div>
       </div>
     </div>
   );

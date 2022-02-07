@@ -39,6 +39,7 @@ a {
   line-height: 58px;
   color: #ffffff;
   overflow: hidden;
+  cursor: pointer;
 }
 .container .header__title > .header__url {
   position: relative;
@@ -46,6 +47,7 @@ a {
   height: 44px;
   background: #80b8fa;
   border-radius: 100px;
+  cursor: pointer;
 }
 .container .header__title.show > .header__url {
   background-color: #5255be;

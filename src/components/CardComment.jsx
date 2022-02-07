@@ -6,6 +6,7 @@ import { getPosts } from "../hooks/useGetPost";
 import More from "../assets/images/more.png";
 import Point from "../assets/images/point.png";
 import Comment from "../assets/images/comment.png";
+import { cleanText } from "../utils/cleanText";
 
 export default function CardComment({ post, height }) {
   const [story, setStory] = useState({});
@@ -27,16 +28,15 @@ export default function CardComment({ post, height }) {
 
   if (post !== null) {
     const { by, time, text } = post;
+    console.log(post);
+    console.log(post.text);
     return (
       <>
         {/* <Link to={"comments/" + id}> */}
         <Link to={"/profile/" + by}>
           <div className="content__by">{by}</div>
         </Link>
-        <div
-          className="content__text"
-          dangerouslySetInnerHTML={{ __html: text }}
-        ></div>
+        {text && <div className="content__text">{cleanText(text)}</div>}
       </>
     );
   } else return null;
