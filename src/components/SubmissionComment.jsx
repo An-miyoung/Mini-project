@@ -1,19 +1,19 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import "../css/card.css";
+
 import "../css/cardComment.css";
 import "../css/submissionComment.css";
 import { getStory } from "../utils/apis";
 import { mapTime } from "../utils/mapTime";
 import More from "../assets/images/more.png";
 import Back from "../assets/images/back.png";
-import Up from "../assets/images/up_small.png";
 import Avatar from "../assets/images/1.png";
 import { cleanText } from "../utils/cleanText";
 
 export default function SumissionComment({ post, height }) {
   const [story, setStory] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getStory(id).then((response) => {
@@ -21,7 +21,6 @@ export default function SumissionComment({ post, height }) {
       setStory(story);
     });
   }, [id]);
-  console.log(id);
 
   if (story !== null) {
     const { by, kids, text, time } = story;
@@ -29,11 +28,17 @@ export default function SumissionComment({ post, height }) {
     console.log(story.text);
     return (
       <div className="container">
+        <div className="header__back">
+          <img
+            src={Back}
+            alt="backWard"
+            onClick={() => {
+              navigate(-1);
+            }}
+          />
+        </div>
         <div className="page submissions">
           <div className="content__comments submissions">
-            <div className="content__up">
-              <img src={Up} alt="upWard" />
-            </div>
             <div className="content__title">
               Comment ({`${kids && kids.length > 0 ? kids.length : 0}`})
             </div>

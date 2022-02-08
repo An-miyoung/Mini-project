@@ -1,5 +1,5 @@
-import { useParams, Link, Routes, Route, useNavigate } from "react-router-dom";
-import _ from "lodash";
+import { useParams, useNavigate } from "react-router-dom";
+import "../css/submissionComment.css";
 import Post from "../components/Post";
 import Header from "./Header";
 import useGetUser from "../hooks/useGetUser";
@@ -7,8 +7,6 @@ import Back from "../assets/images/back.png";
 import { useEffect } from "react";
 import { getSubmissions } from "../utils/apis";
 import { useState } from "react/cjs/react.development";
-import BottomNavi from "./BottomNavi";
-import Comments from "./Comments";
 
 export default function SubmissionList() {
   const navigate = useNavigate();
@@ -28,16 +26,22 @@ export default function SubmissionList() {
 
   return (
     <div className="container">
-      <div className="header__back submissions">
+      {/* <Header name={type} /> */}
+      <div className="title-container submissions">
+        <div className="title">
+          <h1 className="inner-box submissions">SUBMISSIONS</h1>
+        </div>
+      </div>
+      <div className="header__back">
         <img
           src={Back}
           alt="backWard"
           onClick={() => {
             navigate(-1);
+            console.log("click");
           }}
         />
       </div>
-      <Header name={type} />
       <div className={`page ${type}`} id="div-page-2">
         {posts &&
           posts.map(
@@ -45,9 +49,6 @@ export default function SubmissionList() {
               post && <Post key={post.id} post={post} type={type} />
           )}
       </div>
-      <Routes>
-        <Route path="comments/:id" element={<Comments />} />
-      </Routes>
     </div>
   );
 }

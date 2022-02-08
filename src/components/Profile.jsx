@@ -1,6 +1,5 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "../css/profile.css";
-import { getPosts } from "../hooks/useGetPost";
 import useGetUser from "../hooks/useGetUser";
 import { mapTime } from "../utils/mapTime";
 import Back from "../assets/images/back.png";
@@ -12,9 +11,6 @@ export default function Profile() {
   console.log(navigate);
   const { by } = useParams();
   console.log("by: ", by);
-
-  // const commentID = getPosts[3];
-  // console.log(commentID);
 
   const user = useGetUser(by);
   console.log(user);

@@ -8,7 +8,6 @@ import { mapTime } from "../utils/mapTime";
 import { cleanText } from "../utils/cleanText";
 
 export default function Card({ post, type, height }) {
-  // const { id, by, kids, score, time, title, url } = post;
   const { id, by, kids, score, title, time } = post;
 
   return (

@@ -15,10 +15,10 @@ import SubmissionComment from "./components/SubmissionComment";
 const App = () => (
   <>
     <Routes>
-      <Route path="/profile/:by/" element={<ProfilePage />} />
+      <Route path="/profile/:by/*" element={<ProfilePage />} />
       <Route path="/profile/:by/submissions/*" element={<SubmissionList />} />
       <Route
-        path="/profile/:by/submissions/comments/:id/"
+        path="/profile/:by/submissions/comments/:id/*"
         element={<SubmissionComment />}
       />
       <Route path="/about/*" element={<AboutPage />} />
