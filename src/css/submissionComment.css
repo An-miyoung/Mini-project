@@ -3,7 +3,7 @@
 }
 .container > .header__back {
   position: absolute;
-  top: 50px;
+  top: 70px;
   left: 27px;
   cursor: pointer;
 }

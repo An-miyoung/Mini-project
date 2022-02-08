@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "../css/profile.css";
 import useGetUser from "../hooks/useGetUser";
 import { mapTime } from "../utils/mapTime";
+import { extractEmail } from "../utils/extractEmail";
 import Back from "../assets/images/back.png";
 import More from "../assets/images/more.png";
 import Bar from "../assets/images/profile-bar.png";
 
 export default function Profile() {
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
   console.log(navigate);
   const { by } = useParams();
@@ -18,36 +21,11 @@ export default function Profile() {
   const { data: profile } = user;
   console.log(profile);
 
-  if (profile === undefined)
-    return (
-      <div className="container">
-        <div className="header__profile">
-          <div className="header__back">
-            <img
-              src={Back}
-              alt="backWard"
-              onClick={() => {
-                navigate(-1);
-              }}
-            />
-          </div>
-          <div className="header__title" style={{ top: "110px" }}>
-            <div
-              className="title-text"
-              style={{ color: "#000000", height: "58px" }}
-            >
-              PROFILE
-            </div>
-          </div>
-        </div>
-        <div className="avatar">
-          <div className="avatar__img"></div>
-          <div className="avatar__name">{by}</div>
-        </div>
-        <p>No Information</p>
-      </div>
-    );
-  else
+  // if (profile.about) {
+  //   setEmail(extractEmail(profile.about));
+  // }
+
+  if (profile !== undefined)
     return (
       <div className="container">
         <div className="header__profile">
@@ -85,7 +63,7 @@ export default function Profile() {
           </div>
           <div className="email">
             <i className="far fa-envelope"></i>
-            <span className="sns__text">email@email.com</span>
+            <span className="sns__text">{email}</span>
           </div>
         </div>
 
@@ -131,4 +109,5 @@ export default function Profile() {
         </div>
       </div>
     );
+  else return null;
 }
