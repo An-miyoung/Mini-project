@@ -26,13 +26,13 @@
 }
 .container #div-page-2.page.submissions {
   width: 100%;
-  /* height: 700px; */
+  height: 700px;
   padding-left: 25px;
   box-sizing: border-box;
   position: absolute;
   left: 0;
   right: 0;
-  top: 196px;
+  top: 175px;
   bottom: 0;
   overflow: auto;
 }

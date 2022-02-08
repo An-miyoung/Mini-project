@@ -26,7 +26,7 @@ export default function CardComment({ post, height }) {
   //     });
   //   });
   // }, [id]);
-  // console.log(post);
+  console.log(post);
 
   if (post !== null) {
     const { by, time, text } = post;

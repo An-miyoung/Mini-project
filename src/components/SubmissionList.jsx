@@ -45,7 +45,6 @@ export default function SubmissionList() {
               post && <Post key={post.id} post={post} type={type} />
           )}
       </div>
-      <BottomNavi />
       <Routes>
         <Route path="comments/:id" element={<Comments />} />
       </Routes>

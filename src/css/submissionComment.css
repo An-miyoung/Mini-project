@@ -1,0 +1,11 @@
+.container .page.submissions {
+  top: 70px;
+}
+.content__comments.submissions {
+  top: -30px;
+  left: 0;
+  height: 900px;
+}
+.content__comments.submissions > .content__inner {
+  height: 800px;
+}
