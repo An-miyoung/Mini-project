@@ -3,7 +3,7 @@
 }
 .container > .header__back {
   position: absolute;
-  top: 70px;
+  top: 60px;
   left: 27px;
   cursor: pointer;
 }
@@ -26,7 +26,7 @@
   overflow: auto;
 }
 .content__comments.submissions {
-  top: -30px;
+  top: -10px;
   left: 0;
   height: 900px;
 }

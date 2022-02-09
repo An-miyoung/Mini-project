@@ -13,7 +13,7 @@ export default function AskPage() {
 
   const posts = useGetPost(type ? type : "top");
 
-  // console.log(posts);
+  console.log(posts);
   useEffect(() => {
     const divPage = document.getElementById("div-page-2");
     const divPageScroll = function (event) {

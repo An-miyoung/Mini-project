@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "../css/submissionComment.css";
 import Post from "../components/Post";
-import Header from "./Header";
 import useGetUser from "../hooks/useGetUser";
 import Back from "../assets/images/back.png";
 import { useEffect } from "react";
@@ -26,7 +25,6 @@ export default function SubmissionList() {
 
   return (
     <div className="container">
-      {/* <Header name={type} /> */}
       <div className="title-container submissions">
         <div className="title">
           <h1 className="inner-box submissions">SUBMISSIONS</h1>

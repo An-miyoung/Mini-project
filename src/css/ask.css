@@ -17,7 +17,9 @@
   box-sizing: border-box;
   overflow: hidden;
 }
-
+.page.ask > .card > .card__container > .card__inner {
+  position: relative;
+}
 .page.ask > .card > .card__container .card__inner .letterQ {
   width: 40px;
   height: 52px;
@@ -34,6 +36,12 @@
   font-size: 20px;
   line-height: 29px;
   color: #000000;
+}
+.page.ask > .card > .card__container > .card__inner > .more.logo__right-arrow {
+  position: absolute;
+  top: 120px;
+  left: 320px;
+  cursor: pointer;
 }
 .page.ask > .card > .card__container .logo {
   position: relative;

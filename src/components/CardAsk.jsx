@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import "../css/card.css";
 import Time from "../assets/images/time.png";
+import More from "../assets/images/more.png";
 import Comment2 from "../assets/images/comment2.png";
 import { mapTime } from "../utils/mapTime";
+import { getStory } from "../utils/apis";
 
 export default function CardAsk({ post, type, height }) {
-  const { by, kids, text, title, time } = post;
+  const { id, by, kids, text, title, time } = post;
 
   return (
     <div className="card" style={{ height: `${height}px` }}>
@@ -16,6 +18,11 @@ export default function CardAsk({ post, type, height }) {
         <div className="card__inner">
           <div className="letterQ">Q.</div>
           <div className="card__item title">{title}</div>
+          <div className="more logo__right-arrow">
+            <Link to={"comments/" + id}>
+              <img src={More} alt="detail" />
+            </Link>
+          </div>
           <div className="logo">
             <div className="card__item by">
               by {by}
