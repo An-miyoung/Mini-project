@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getStories } from "../utils/apis";
 
 let pageNumber = 0;
+
 export const getPosts = [];
 
 export default function useDataFetcher(type) {

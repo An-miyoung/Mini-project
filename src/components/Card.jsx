@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/card.css";
 import More from "../assets/images/more.png";
@@ -7,14 +8,22 @@ import Comment2 from "../assets/images/comment2.png";
 import { mapTime } from "../utils/mapTime";
 import { cleanText } from "../utils/cleanText";
 
-export default function Card({ post, type, height }) {
+export default function Card({ post, type, height, rank }) {
   const { id, by, kids, score, title, time } = post;
+  const [getRank, setRank] = useState(rank);
+
+  useEffect(() => {
+    console.log("받은 rank: ", rank);
+    setRank(() => rank + 1);
+    console.log(getRank);
+    return getRank;
+  }, [post]);
 
   return (
     <div className="card" style={{ height: `${height}px` }}>
       {type === "top" && (
         <div className="card__container top" style={{ height: `${height}px` }}>
-          <div className="card__item rank">1</div>
+          <div className="card__item rank">{getRank}</div>
           <div className="card__item title">{title}</div>
           <div className="more logo__right-arrow">
             <Link to={"comments/" + id}>

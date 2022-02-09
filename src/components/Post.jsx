@@ -1,8 +1,12 @@
+import { useState } from "react";
 import "../css/card.css";
 import Card from "./Card";
 
+export let rank = 0;
+console.log(rank);
 export default function Post({ post, type }) {
   let height = 0;
+
   switch (type) {
     case "top":
       height = 102;
@@ -22,6 +26,7 @@ export default function Post({ post, type }) {
     default:
       height = 102;
   }
-
-  return <Card post={post} type={type} height={height} />;
+  rank = rank + 1;
+  console.log(rank);
+  return <Card post={post} type={type} height={height} rank={rank} />;
 }

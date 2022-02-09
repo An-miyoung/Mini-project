@@ -6,6 +6,7 @@ const BASE_URL = "https://hacker-news.firebaseio.com/v0";
 export const getStory = async (id) => {
   try {
     const story = await axios.get(`${BASE_URL}/item/${id}.json`);
+    console.log(story);
     return story;
   } catch (error) {
     console.log(error);

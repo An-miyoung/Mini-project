@@ -8,6 +8,7 @@ import AskPage from "./pages/AskPage";
 import ShowPage from "./pages/ShowPage";
 import JobPage from "./pages/JobPage";
 import AboutPage from "./pages/AboutPage";
+// import Fake from "./pages/Fake";
 import ProfilePage from "./pages/ProfilePage";
 import SubmissionList from "./components/SubmissionList";
 import SubmissionComment from "./components/SubmissionComment";
@@ -21,6 +22,7 @@ const App = () => (
         path="/profile/:by/submissions/comments/:id/*"
         element={<SubmissionComment />}
       />
+      {/* <Route path="/fake/*" element={<Fake />} /> */}
       <Route path="/about/*" element={<AboutPage />} />
       <Route path="/job/*" element={<JobPage />} />
       <Route path="/show/*" element={<ShowPage />} />

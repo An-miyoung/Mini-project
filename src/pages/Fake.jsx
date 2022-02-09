@@ -3,7 +3,8 @@ import "../css/top.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { TOP_PAGE_HEIGHT, CURRENT_PAGE_HEIGHT } from "../constants";
-import useGetPost, { getStoriesPage, setPage } from "../hooks/useGetPost";
+import { getPosts, getStoriesPage, setPage } from "../hooks/useGetPost";
+import useGetTopPost from "../hooks/useGetTopPost";
 import Post from "../components/Post";
 import BottomNavi from "../components/BottomNavi";
 import { Route, Routes } from "react-router-dom";
@@ -32,7 +33,14 @@ export default function HomePage() {
     slidesToScroll: 1,
   };
 
-  const posts = useGetPost(type ? type : "top");
+  const posts = useGetTopPost(type ? type : "top");
+  console.log(posts);
+
+  useEffect(() => {
+    const mypost = posts[0];
+    console.log(mypost);
+    return getPosts[0];
+  }, [posts]);
 
   useEffect(() => {
     const topPage = document.getElementById("topPage");

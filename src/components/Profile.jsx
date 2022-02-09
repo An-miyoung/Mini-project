@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "../css/profile.css";
 import useGetUser from "../hooks/useGetUser";
@@ -9,7 +9,6 @@ import More from "../assets/images/more.png";
 import Bar from "../assets/images/profile-bar.png";
 
 export default function Profile() {
-  const [email, setEmail] = useState("");
   const navigate = useNavigate();
   console.log(navigate);
   const { by } = useParams();
@@ -21,8 +20,11 @@ export default function Profile() {
   const { data: profile } = user;
   console.log(profile);
 
-  // if (profile.about) {
-  //   setEmail(extractEmail(profile.about));
+  // const hasEmail = Object.keys(profile).includes("about");
+  // console.log(hasEmail);
+
+  // if (hasEmail && profile !== null) {
+  //   let email2 = extractEmail(profile.about);
   // }
 
   if (profile !== undefined)
@@ -63,7 +65,7 @@ export default function Profile() {
           </div>
           <div className="email">
             <i className="far fa-envelope"></i>
-            <span className="sns__text">{email}</span>
+            <span className="sns__text">email</span>
           </div>
         </div>
 
