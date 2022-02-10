@@ -15,6 +15,7 @@ import CardComment from "./CardComment";
 export default function Comments() {
   const [story, setStory] = useState({});
   const [kidList, setKidList] = useState([]);
+  const [clicked, setClicked] = useState(false);
   const { title, url, by, kids, score } = story;
 
   const { id } = useParams();
@@ -32,6 +33,18 @@ export default function Comments() {
       });
     });
   }, [idx]);
+
+  function verticalSlide() {
+    const page = document.getElementById("slide-comment");
+    if (clicked) {
+      page.style.top = "442px";
+      page.style.height = "454px";
+    } else {
+      page.style.top = "147px";
+      page.style.height = "749px";
+    }
+    setClicked(!clicked);
+  }
 
   return (
     <>
@@ -92,8 +105,8 @@ export default function Comments() {
         </div>
         <div className="header__more"></div>
       </div>
-      <div className="content__comments">
-        <div className="content__up">
+      <div className="content__comments" id="slide-comment">
+        <div className="content__up" onClick={verticalSlide}>
           <img src={Up} alt="upWard" />
         </div>
         <div className="content__title">

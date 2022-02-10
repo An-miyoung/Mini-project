@@ -30,7 +30,7 @@ export default function JobPage() {
     };
   }, [type]);
 
-  function UpSlide() {
+  function verticalSlide() {
     const page = document.getElementById("div-page");
     if (clicked) {
       page.style.top = "442px";
@@ -46,7 +46,7 @@ export default function JobPage() {
     <div className="container">
       <Header name={type} />
       <div className={`page ${type}`} id="div-page">
-        <div className="content__up" onClick={UpSlide}>
+        <div className="content__up" onClick={verticalSlide}>
           <img src={Up} alt="upWard" />
         </div>
         <div className="card__title">

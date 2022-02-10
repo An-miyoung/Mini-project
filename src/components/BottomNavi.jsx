@@ -44,7 +44,9 @@ export default function BottomNavi() {
         className="navi__up"
         onClick={() => {
           const divPage = document.getElementById("div-page");
-          divPage.scrollTop = 0;
+          const divPage2 = document.getElementById("div-page-2");
+          if (divPage) divPage.scrollTop = 0;
+          else divPage2.scrollTop = 0;
         }}
       >
         <img src={Up} alt="gotoTop" />
