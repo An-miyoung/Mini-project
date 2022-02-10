@@ -9,12 +9,10 @@ import { useState } from "react/cjs/react.development";
 
 export default function SubmissionList() {
   const navigate = useNavigate();
-  console.log(navigate);
   const [posts, setPosts] = useState(null);
   const type = "submissions";
   const { by } = useParams();
   const user = useGetUser(by);
-  console.log(user);
 
   useEffect(() => {
     getSubmissions(user.data).then((posts) => {

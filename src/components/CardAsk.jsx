@@ -4,7 +4,6 @@ import Time from "../assets/images/time.png";
 import More from "../assets/images/more.png";
 import Comment2 from "../assets/images/comment2.png";
 import { mapTime } from "../utils/mapTime";
-import { getStory } from "../utils/apis";
 
 export default function CardAsk({ post, type, height }) {
   const { id, by, kids, text, title, time } = post;

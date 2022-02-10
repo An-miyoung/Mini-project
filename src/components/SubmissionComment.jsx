@@ -1,6 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import "../css/cardComment.css";
 import "../css/submissionComment.css";
 import { getStory } from "../utils/apis";

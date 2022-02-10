@@ -10,8 +10,7 @@ export default function CardComment({ post, height }) {
 
   if (post !== null) {
     const { by, time, text } = post;
-    console.log(post);
-    console.log(post.text);
+
     return (
       <>
         <div className="content__header">

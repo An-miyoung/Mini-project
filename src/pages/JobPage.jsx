@@ -9,11 +9,10 @@ import CardJob from "../components/CardJob";
 export default function JobPage() {
   const type = "job";
   const [clicked, setClicked] = useState(false);
-  // console.log(type);
 
   const posts = useGetPost(type ? type : "top");
-
   // console.log(posts);
+
   useEffect(() => {
     const divPage = document.getElementById("div-page");
     const divPageScroll = function (event) {

@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import "../css/job.css";
 import { extractUrl } from "../utils/extractUrl";
-import { STORY_INCREMENT } from "../constants";
 
 export default function JobList({ post, type }) {
   const [cleanUrl, setCleanUrl] = useState("");
-  const { id, by, kids, score, title, url, text } = post;
-  console.log("jobs: ", post);
+  const { title, url, text } = post;
 
   useEffect(() => {
     if (!url && text) {

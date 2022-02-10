@@ -1,3 +1,3 @@
 export default function NotFound() {
-  return <div>Sorry, Page is Not Found.</div>;
+  return <div style={{ fontSize: "30px" }}>Sorry, Page is Not Found.</div>;
 }

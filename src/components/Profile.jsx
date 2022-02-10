@@ -47,7 +47,7 @@ export default function Profile() {
           {Object.keys(profile).includes("about") && (
             <div className="sns__about">{cleanText(profile.about)}</div>
           )}
-          <>
+          <div className="sns__detail">
             <div className="instagram">
               <i className="fab fa-instagram"></i>
               <span className="sns__text">No instagram</span>
@@ -60,7 +60,7 @@ export default function Profile() {
               <i className="far fa-envelope"></i>
               <span className="sns__text">No Email Address</span>
             </div>
-          </>
+          </div>
         </div>
 
         <div className="career">

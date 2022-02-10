@@ -20,7 +20,6 @@ export default function Comments() {
 
   const { id } = useParams();
   const idx = Number(id);
-  console.log("comments-params: ", idx);
 
   const type = getPosts[2];
 

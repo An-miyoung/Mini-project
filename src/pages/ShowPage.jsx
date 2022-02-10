@@ -9,11 +9,10 @@ import Comments from "../components/Comments";
 
 export default function ShowPage() {
   const type = "show";
-  // console.log(type);
 
   const posts = useGetPost(type ? type : "top");
-
   // console.log(posts);
+
   useEffect(() => {
     const divPage = document.getElementById("div-page-2");
     const divPageScroll = function (event) {
