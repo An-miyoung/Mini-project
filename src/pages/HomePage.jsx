@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../css/top.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,11 +13,8 @@ import { NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.png";
 import ThreeDot from "../assets/images/3Dot.png";
 import MoreL from "../assets/images/more_large.png";
-import MoreS from "../assets/images/more_silver.png";
-import Point from "../assets/images/point.png";
-import Point2 from "../assets/images/point2.png";
-import Comment from "../assets/images/comment.png";
-import Comment2 from "../assets/images/comment2.png";
+import Point from "../assets/images/point2.png";
+import Comment from "../assets/images/comment2.png";
 import Slider from "react-slick";
 
 export default function HomePage() {
@@ -34,7 +32,6 @@ export default function HomePage() {
 
   const posts = useGetPost(type ? type : "top");
   const top5 = posts.splice(0, 5);
-  console.log({ top5 });
 
   useEffect(() => {
     const topPage = document.getElementById("topPage");
@@ -62,7 +59,6 @@ export default function HomePage() {
           }
           pageMove.splice(0);
         }
-        // console.log("업 슬라이딩: ", lastMove);
       } else if (clientYs[0] < clientYs[clientYs.length - 1]) {
         pageMove.push(clientYs[clientYs.length - 1] - clientYs[0]);
         const lastMove = pageMove.reduce((r, l) => r + l, 0);
@@ -73,19 +69,17 @@ export default function HomePage() {
           title.style.display = "block";
           pageMove.splice(0);
         }
-        // console.log("다운 슬라이딩: ", lastMove);
       }
     };
     topPage.addEventListener("touchstart", topPageTouchStart);
     topPage.addEventListener("touchmove", topPageTouchMove);
     topPage.addEventListener("touchend", topPageTouchEnd);
     return function () {
-      // console.log("터치 종료");
       topPage.removeEventListener("touchstart", topPageTouchStart);
       topPage.removeEventListener("touchendmove", topPageTouchMove);
       topPage.removeEventListener("touchend", topPageTouchEnd);
     };
-  }, []);
+  });
 
   useEffect(() => {
     const divPage = document.getElementById("div-page");
@@ -128,7 +122,7 @@ export default function HomePage() {
         </div>
         <Slider {...settings}>
           {top5 &&
-            top5.map(({ data }, index) => (
+            top5.map(({ data: post }, index) => (
               <div className="slider__item" key={index}>
                 <div className="slider__box" id={index === 0 ? "first" : ""}>
                   <div className="slider__text">
@@ -136,10 +130,10 @@ export default function HomePage() {
                       className="text__title"
                       id={index === 0 ? "first" : ""}
                     >
-                      {data.title}
+                      {post.title}
                     </div>
                     <div className="text__by" id={index === 0 ? "first" : ""}>
-                      by username
+                      by {post.by}
                     </div>
                   </div>
                   <div className="slider__logo" id={index === 0 ? "first" : ""}>
@@ -155,7 +149,7 @@ export default function HomePage() {
                         style={{ marginLeft: "3px", marginRight: "12px" }}
                         id={index === 0 ? "first" : ""}
                       >
-                        score
+                        {post.score}
                       </span>
                       <span id={index === 0 ? "first" : ""}>
                         <img
@@ -168,12 +162,17 @@ export default function HomePage() {
                         style={{ marginLeft: "3px" }}
                         id={index === 0 ? "first" : ""}
                       >
-                        {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}
-                        30
+                        {`${
+                          post.kids && post.kids.length > 0
+                            ? post.kids.length
+                            : 0
+                        }`}
                       </span>
                     </div>
                     <div className="more" id={index === 0 ? "first" : ""}>
-                      <img src={MoreL} alt="detail" />
+                      <Link to={"comments/" + post.id}>
+                        <img src={MoreL} alt="detail" />
+                      </Link>
                     </div>
                   </div>
                 </div>

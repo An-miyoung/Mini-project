@@ -1,31 +1,20 @@
-import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "../css/profile.css";
 import useGetUser from "../hooks/useGetUser";
 import { mapTime } from "../utils/mapTime";
-import { extractEmail } from "../utils/extractEmail";
+import { cleanText } from "../utils/cleanText";
 import Back from "../assets/images/back.png";
 import More from "../assets/images/more.png";
 import Bar from "../assets/images/profile-bar.png";
 
+let hasAbout = false;
 export default function Profile() {
   const navigate = useNavigate();
-  console.log(navigate);
   const { by } = useParams();
-  console.log("by: ", by);
 
   const user = useGetUser(by);
-  console.log(user);
-
   const { data: profile } = user;
-  console.log(profile);
-
-  // const hasEmail = Object.keys(profile).includes("about");
-  // console.log(hasEmail);
-
-  // if (hasEmail && profile !== null) {
-  //   let email2 = extractEmail(profile.about);
-  // }
+  // console.log(profile);
 
   if (profile !== undefined)
     return (
@@ -55,18 +44,23 @@ export default function Profile() {
         </div>
 
         <div className="sns">
-          <div className="instagram">
-            <i className="fab fa-instagram"></i>
-            <span className="sns__text">insta1234</span>
-          </div>
-          <div className="texttweeter">
-            <i className="fab fa-twitter"></i>
-            <span className="sns__text">{`tweet5678`}</span>
-          </div>
-          <div className="email">
-            <i className="far fa-envelope"></i>
-            <span className="sns__text">email</span>
-          </div>
+          {Object.keys(profile).includes("about") && (
+            <div className="sns__about">{cleanText(profile.about)}</div>
+          )}
+          <>
+            <div className="instagram">
+              <i className="fab fa-instagram"></i>
+              <span className="sns__text">No instagram</span>
+            </div>
+            <div className="texttweeter">
+              <i className="fab fa-twitter"></i>
+              <span className="sns__text">No tweeter</span>
+            </div>
+            <div className="email">
+              <i className="far fa-envelope"></i>
+              <span className="sns__text">No Email Address</span>
+            </div>
+          </>
         </div>
 
         <div className="career">
