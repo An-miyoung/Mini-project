@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/card.css";
 import More from "../assets/images/more.png";
