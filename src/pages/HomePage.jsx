@@ -33,6 +33,8 @@ export default function HomePage() {
   };
 
   const posts = useGetPost(type ? type : "top");
+  const top5 = posts.splice(0, 5);
+  console.log({ top5 });
 
   useEffect(() => {
     const topPage = document.getElementById("topPage");
@@ -90,7 +92,7 @@ export default function HomePage() {
     const divPageScroll = function (event) {
       if (
         event.target.scrollHeight <=
-        event.target.clientHeight + event.target.scrollTop
+        Math.ceil(event.target.clientHeight + event.target.scrollTop)
       ) {
         getStoriesPage(type);
       }
@@ -125,191 +127,58 @@ export default function HomePage() {
           <h4>Todays' TOP5</h4>
         </div>
         <Slider {...settings}>
-          <div className="slider__item">
-            <div className="slider__box" id="first">
-              <div className="slider__text">
-                <div className="text__title" id="first">
-                  The Windows 11 taskbar is an annoying step backword
-                </div>
-                <div className="text__by" id="first">
-                  by username
-                </div>
-              </div>
-              <div className="slider__logo" id="first">
-                <div className="logo logo__point__comment">
-                  <span id="first">
-                    <img
-                      src={Point}
-                      alt="point"
-                      style={{ width: "16px", height: "16px" }}
-                    />
-                  </span>
-                  <span
-                    style={{ marginLeft: "3px", marginRight: "12px" }}
-                    id="first"
-                  >
-                    score
-                  </span>
-                  <span id="first">
-                    <img
-                      src={Comment}
-                      alt="comment"
-                      style={{ marginLeft: "3px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px" }} id="first">
-                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
-                  </span>
-                </div>
-                <div className="more" id="first">
-                  <img src={MoreL} alt="detail" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="slider__item">
-            <div className="slider__box">
-              <div className="slider__text">
-                <div className="text__title">FreePostgerss DataBase</div>
-                <div className="text__by">by username</div>
-              </div>
-              <div className="slider__logo">
-                <div className="logo logo__point__comment">
-                  <span>
-                    <img
-                      src={Point2}
-                      alt="point"
-                      style={{
-                        width: "16px",
-                        height: "16px",
-                      }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
-                    score
-                  </span>
-                  <span>
-                    <img
-                      src={Comment2}
-                      alt="comment"
-                      style={{ marginLeft: "3px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px" }}>
-                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
-                  </span>
-                </div>
-                <div className="more">
-                  <img src={MoreS} alt="detail" />
+          {top5 &&
+            top5.map(({ data }, index) => (
+              <div className="slider__item" key={index}>
+                <div className="slider__box" id={index === 0 ? "first" : ""}>
+                  <div className="slider__text">
+                    <div
+                      className="text__title"
+                      id={index === 0 ? "first" : ""}
+                    >
+                      {data.title}
+                    </div>
+                    <div className="text__by" id={index === 0 ? "first" : ""}>
+                      by username
+                    </div>
+                  </div>
+                  <div className="slider__logo" id={index === 0 ? "first" : ""}>
+                    <div className="logo logo__point__comment">
+                      <span id={index === 0 ? "first" : ""}>
+                        <img
+                          src={Point}
+                          alt="point"
+                          style={{ width: "16px", height: "16px" }}
+                        />
+                      </span>
+                      <span
+                        style={{ marginLeft: "3px", marginRight: "12px" }}
+                        id={index === 0 ? "first" : ""}
+                      >
+                        score
+                      </span>
+                      <span id={index === 0 ? "first" : ""}>
+                        <img
+                          src={Comment}
+                          alt="comment"
+                          style={{ marginLeft: "3px" }}
+                        />
+                      </span>
+                      <span
+                        style={{ marginLeft: "3px" }}
+                        id={index === 0 ? "first" : ""}
+                      >
+                        {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}
+                        30
+                      </span>
+                    </div>
+                    <div className="more" id={index === 0 ? "first" : ""}>
+                      <img src={MoreL} alt="detail" />
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="slider__item">
-            <div className="slider__box">
-              <div className="slider__text">
-                <div className="text__title">FreePostgerss DataBase</div>
-                <div className="text__by">by username</div>
-              </div>
-              <div className="slider__logo">
-                <div className="logo logo__point__comment">
-                  <span>
-                    <img
-                      src={Point2}
-                      alt="point"
-                      style={{ width: "16px", height: "16px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
-                    score
-                  </span>
-                  <span>
-                    <img
-                      src={Comment2}
-                      alt="comment"
-                      style={{ marginLeft: "3px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px" }}>
-                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
-                  </span>
-                </div>
-                <div className="more">
-                  <img src={MoreS} alt="detail" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="slider__item">
-            <div className="slider__box">
-              <div className="slider__text">
-                <div className="text__title">FreePostgerss DataBase</div>
-                <div className="text__by">by username</div>
-              </div>
-              <div className="slider__logo">
-                <div className="logo logo__point__comment">
-                  <span>
-                    <img
-                      src={Point2}
-                      alt="point"
-                      style={{ width: "16px", height: "16px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
-                    score
-                  </span>
-                  <span>
-                    <img
-                      src={Comment2}
-                      alt="comment"
-                      style={{ marginLeft: "3px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px" }}>
-                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
-                  </span>
-                </div>
-                <div className="more">
-                  <img src={MoreS} alt="detail" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="slider__item">
-            <div className="slider__box">
-              <div className="slider__text">
-                <div className="text__title">FreePostgerss DataBase</div>
-                <div className="text__by">by username</div>
-              </div>
-              <div className="slider__logo">
-                <div className="logo logo__point__comment">
-                  <span>
-                    <img
-                      src={Point2}
-                      alt="point"
-                      style={{ width: "16px", height: "16px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px", marginRight: "12px" }}>
-                    score
-                  </span>
-                  <span>
-                    <img
-                      src={Comment2}
-                      alt="comment"
-                      style={{ marginLeft: "3px" }}
-                    />
-                  </span>
-                  <span style={{ marginLeft: "3px" }}>
-                    {/* {`${kids && kids.length > 0 ? kids.length : 0}`} */}30
-                  </span>
-                </div>
-                <div className="more">
-                  <img src={MoreS} alt="detail" />
-                </div>
-              </div>
-            </div>
-          </div>
+            ))}
         </Slider>
       </div>
       <div id="topPage" className="page top">
@@ -318,8 +187,10 @@ export default function HomePage() {
         </div>
         <div className="page" id="div-page">
           {posts.map(
-            ({ data: post }) =>
-              post && <Post key={post.id} post={post} type={type} />
+            ({ data: post }, index) =>
+              post && (
+                <Post key={post.id} post={post} type={type} rank={index + 6} />
+              )
           )}
         </div>
       </div>

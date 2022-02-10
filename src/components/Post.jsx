@@ -2,9 +2,7 @@ import { useState } from "react";
 import "../css/card.css";
 import Card from "./Card";
 
-export let rank = 0;
-console.log(rank);
-export default function Post({ post, type }) {
+export default function Post({ post, type, rank }) {
   let height = 0;
 
   switch (type) {
@@ -26,7 +24,6 @@ export default function Post({ post, type }) {
     default:
       height = 102;
   }
-  rank = rank + 1;
-  console.log(rank);
+  // rank = rank + 1;
   return <Card post={post} type={type} height={height} rank={rank} />;
 }

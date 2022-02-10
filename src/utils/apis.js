@@ -2,11 +2,11 @@ import axios from "axios";
 import { STORY_INCREMENT } from "../constants";
 
 const BASE_URL = "https://hacker-news.firebaseio.com/v0";
-
-export const getStory = async (id) => {
+let rank = 1;
+export const getStory = async (id, index) => {
   try {
     const story = await axios.get(`${BASE_URL}/item/${id}.json`);
-    console.log(story);
+    story.data.rank = rank++;
     return story;
   } catch (error) {
     console.log(error);
