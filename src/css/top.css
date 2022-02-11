@@ -80,6 +80,7 @@
 }
 .slider__container .slider__box .slider__text > .text__title {
   width: 170px;
+  height: 120px;
   font-weight: bold;
   font-size: 20px;
   line-height: 29px;
@@ -89,6 +90,7 @@
 }
 .slider__container .slider__box .slider__text #first.text__title {
   width: 180px;
+  height: 145px;
   font-weight: bold;
   font-size: 22px;
   line-height: 35px;
