@@ -1,9 +1,6 @@
 # hacker-News 를 이용한 웹앱
 
-
-<img width="283" alt="스크린샷 2022-03-21 오후 8 10 01" src="https://user-images.githubusercontent.com/61385080/159249748-deac51f6-ee44-4425-ad27-fd8e610a55f2.png">
-<img width="283" alt="스크린샷 2022-03-21 오후 8 10 29" src="https://user-images.githubusercontent.com/61385080/159249755-3e2ada9a-18aa-474e-9c01-f83adbf40cbf.png">
-<img width="283" alt="스크린샷 2022-03-21 오후 8 10 47" src="https://user-images.githubusercontent.com/61385080/159249758-6064cae4-6229-4c86-9a67-90879f5a0398.png">
+<img width="957" alt="스크린샷 2022-03-21 오후 8 18 13" src="https://user-images.githubusercontent.com/61385080/159250729-da965bac-e21c-495e-8001-1682ab63ced6.png">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
