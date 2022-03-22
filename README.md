@@ -1,8 +1,8 @@
 # hacker-News 를 이용한 웹앱
 
-<img width="957" alt="스크린샷 2022-03-21 오후 8 18 13" src="https://user-images.githubusercontent.com/61385080/159250729-da965bac-e21c-495e-8001-1682ab63ced6.png">
+## image shot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="957" alt="스크린샷 2022-03-21 오후 8 18 13" src="https://user-images.githubusercontent.com/61385080/159250729-da965bac-e21c-495e-8001-1682ab63ced6.png">
 
 
 
