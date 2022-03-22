@@ -1,4 +1,4 @@
-# Hacker-News 를 이용한 웹앱
+# Hacker-News  웹앱
 
 ## image shot
 
