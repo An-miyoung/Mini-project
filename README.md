@@ -1,4 +1,4 @@
-# hacker-News 를 이용한 웹앱
+# Hacker-News 를 이용한 웹앱
 
 ## image shot
 
@@ -6,71 +6,39 @@
 
 
 
-## Available Scripts
+## 초기 setting
 
-In the project directory, you can run:
+create-react-app 을 이용해 프로젝트의 setting 에 관한 스트레스를 줄였습니다.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 주요기능
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Hacker-news 사이트가 제공하는 api를 이용해 news 를 보여주기
+- user 정보 보여주기
+- 댓글 보기
+- top/new/ask/show/job 등 항목별로 api 이용해 보여주기
+- 좌우 slider
+- 상하 slider
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 기술스택
 
-### `npm run build`
+- frontend : react
+- api 요청 : axios
+- store : local store
+- css : css
+- backend : hacker-news 제공
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 구현 concept
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 모든 페이지에 접근할때 axios를 이용해 server 에 다시 요청한 새 내용을 render 
+  : 게시판형태의 속성상 1초전의 내용이 1초후와 같다고 보장할 수 없으므로 좀 전의 받아둔 내용은 재사용하는 것은 정확한 정보가 아닐 수 있기 때문에 매 페이지마다 새롭게 요청한 정보를 사용한다.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 사용 library
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- react-slick-slider
+- axios
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### test
